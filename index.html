@@ -259,6 +259,17 @@ footer .logo{color:#fff}
 /* toast */
 .toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top,0px) + 52px);z-index:100;transform:translate(-50%,-150%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;font-size:14.5px;box-shadow:var(--sh2);transition:transform .35s cubic-bezier(.2,.9,.3,1);max-width:92vw;display:flex;gap:8px;align-items:center}
 .toast.on{transform:translate(-50%,0)}
+.toast .tundo{background:#fff;color:var(--ink);border:0;border-radius:10px;font-weight:800;padding:6px 11px;cursor:pointer;font-size:13.5px;flex:none}
+.clink-foot{display:block;width:100%;margin-top:10px;padding:10px 8px;background:none;border:0;color:#64748b;font-weight:700;font-size:14.5px;cursor:pointer;text-align:center}
+.clink-foot:hover{color:var(--ink);text-decoration:underline}
+.cask{position:fixed;inset:0;z-index:110;background:rgba(15,23,42,.45);display:grid;place-items:center;padding:24px;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+.cask[hidden]{display:none!important}
+.cask-card{background:#fff;border-radius:20px;padding:22px 20px 18px;max-width:340px;width:100%;box-shadow:0 18px 50px rgba(15,23,42,.28);text-align:center}
+.cask-card p{margin:0 0 6px;font-weight:800;font-size:17.5px;color:var(--ink)}
+.cask-card .sub{font-weight:500;color:#64748b;font-size:14px;margin:0 0 16px;line-height:1.4}
+.cask-btns{display:flex;gap:8px}
+.cask-btns .btn{flex:1}
+
 
 @media (min-width:720px){
   .grid{grid-template-columns:repeat(3,1fr);gap:16px}
@@ -677,6 +688,57 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
 #lPager button:disabled{opacity:.4}
 #lPager .pgskip{color:var(--mut);padding:0 2px;font-weight:700}
 #lPager .pginfo{color:var(--mut);font-size:13px;font-weight:600;margin-left:4px}
+/* Phase 3 extras: mega-menu, eko, listy, kalkulator, poradniki, mapa, konto */
+.catbar .wrap{align-items:stretch}
+.catdrop{position:relative;flex:none}
+.catdrop>a{display:block}
+.catmega{display:none;position:absolute;left:0;top:100%;min-width:280px;max-width:420px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 40px rgba(15,23,42,.14);padding:12px;z-index:40}
+.catdrop:hover .catmega,.catdrop:focus-within .catmega,.catdrop.open .catmega{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.catmega a{display:flex;flex-direction:column;padding:8px 10px;border-radius:10px;border-bottom:0;white-space:normal;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none}
+.catmega a small{font-weight:600;color:var(--mut);font-size:11.5px}
+.catmega a:hover{background:#f0fdfa;color:var(--g)}
+.subtile .si{display:block;font-size:20px;margin-bottom:2px}
+.lpop{margin:0 0 16px}
+.lpop h3{font-size:16px;margin:0 0 8px}
+.lpop .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.bdg i.eco{background:#047857}
+.bdg i.bigpack{background:#0f766e}
+.lists{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:12px 0 20px}
+.listc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit}
+.listc:hover{border-color:var(--g);box-shadow:0 8px 24px rgba(15,118,110,.1)}
+.listc .e{font-size:28px}
+.listc h3{margin:0;font-size:17px}
+.listc p{margin:0;color:var(--mut);font-size:13.5px;flex:1}
+.calcard{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px;margin:0 0 16px}
+.calopts{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.calopts button{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 14px;font:inherit;font-weight:700}
+.calopts button.on{border-color:var(--g);background:#f0fdfa;color:var(--g)}
+.calrow{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.calrow small{color:var(--mut)}
+.comap{height:220px;border-radius:14px;margin:8px 0;border:1.5px solid var(--line);overflow:hidden;background:#e2e8f0}
+.comap .leaflet-container{height:100%;width:100%;font:inherit}
+.mapnote{font-size:12px;color:var(--mut);margin:4px 0 8px}
+.savecard{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:18px;padding:18px;margin:0 0 16px}
+.savecard b{font-size:28px;display:block;letter-spacing:-.03em}
+.savecard small{opacity:.9}
+.refbox{background:#fff;border:1.5px dashed var(--g);border-radius:16px;padding:16px}
+.refcode{font-size:28px;font-weight:800;letter-spacing:.08em;color:var(--g)}
+.artlist{display:grid;gap:12px}
+.artc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px;text-decoration:none;color:inherit;display:block}
+.artc:hover{border-color:var(--g)}
+.artc h3{margin:0 0 6px}
+.artbody{background:#fff;border-radius:18px;padding:8px 2px 20px;line-height:1.65}
+.artbody img{max-width:100%;height:auto}
+.hurtbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.hurtbar input,.hurtbar select{height:38px;border:1.5px solid var(--line);border-radius:10px;padding:0 10px;font:inherit}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:0 0 12px}
+.kpis div{background:#f8fafc;border-radius:12px;padding:10px}
+.kpis b{display:block;font-size:16px}
+.featrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.featc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px;text-decoration:none;color:inherit}
+.featc:hover{border-color:var(--g)}
+@media (max-width:959px){.catmega,.catdrop:hover .catmega{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -705,7 +767,7 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
     </div>
   </div>
   <div class="wrap msearch"><form id="hsF2" role="search" autocomplete="off"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="hq2" type="search" placeholder="Szukaj produktów…" autocomplete="off" enterkeyhint="search"></form></div>
-  <nav class="catbar" aria-label="Kategorie"><div class="wrap"><a href="#/produkty">☰ Wszystkie</a><a href="#/kategoria/papier">🧻 Papier</a><a href="#/kategoria/pranie">👕 Pranie</a><a href="#/kategoria/kuchnia">🍽️ Zmywanie</a><a href="#/kategoria/sprzatanie">🧽 Sprzątanie</a><a href="#/kategoria/folie">🗑️ Worki i folie</a><a href="#/kategoria/higiena">🧼 Higiena</a><a href="#/kategoria/dziecko">👶 Dziecko</a><a href="#/kategoria/zwierzaki">🐾 Zwierzaki</a><a href="#/kategoria/kawa">☕ Kawa i herbata</a><a href="#/kategoria/przekaski">🥨 Przekąski</a><a href="#/kategoria/dom">🔋 Baterie</a><a href="#zestawy" class="hl">⭐ Zestawy</a></div></nav>
+  <nav class="catbar" id="catbar" aria-label="Kategorie"><div class="wrap" id="catbarIn"><a href="#/produkty">☰ Wszystkie</a></div></nav>
 </header>
 </div>
 <div id="jsErr" role="alert">⚠️ Błąd skryptu – część funkcji może nie działać. <span></span> <button onclick="this.parentNode.style.display='none'">✕</button></div>
@@ -807,7 +869,20 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
 
 
 <section id="dopasuj" style="padding-top:10px">
-  <div class="wrap"><div class="qbanner"><div><b>Nie wiesz, ile tego potrzebujesz?</b><p>2 pytania: ile osób w domu i czy jest maluch albo zwierzak. Resztę dobierzemy.</p></div><button class="btn btn-p" data-quiz>⚡ Dobierz zestaw w 30 s</button></div></div>
+  <div class="wrap"><div class="qbanner"><div><b>Nie wiesz, ile tego potrzebujesz?</b><p>Kalkulator dobierze ilości i rytm dostaw do liczby osób, malucha i zwierzaków. Albo 2 szybkie pytania – zestaw w 30 sekund.</p></div><div class="inl"><a class="btn btn-p" href="#/kalkulator">🧮 Kalkulator zużycia</a> <button class="btn btn-o" data-quiz>⚡ Zestaw w 30 s</button></div></div></div>
+</section>
+<section id="listyHome" style="padding-top:16px">
+  <div class="wrap"><h2>Gotowe listy na start</h2><p class="sub">Jednym kliknięciem wrzucasz do subskrypcji prawdziwe produkty z katalogu.</p><div class="lists" id="homeLists"></div><p><a href="#/listy">Zobacz wszystkie listy →</a></p></div>
+</section>
+<section id="homePorad" style="padding-top:16px" hidden data-porad-nav>
+  <div class="wrap"><h2>Poradniki</h2><p class="sub">Krótkie teksty, które pomagają dobrać chemię do domu.</p><div class="artlist" id="homePoradList"></div><p><a href="#/poradniki">Wszystkie poradniki →</a></p></div>
+</section>
+<section style="padding-top:16px">
+  <div class="wrap"><h2>Więcej niż sklep</h2><div class="featrow">
+    <a class="featc" href="#/eko"><span style="font-size:26px">🌱</span><h3>Eko-tryb</h3><p class="sub">Filtrujemy tylko to, co w nazwie albo marce naprawdę jest eko, bio, refill albo dużym opakowaniem. Nic nie dopisujemy.</p></a>
+    <a class="featc" href="#/polecenia"><span style="font-size:26px">🎁</span><h3>Program poleceń</h3><p class="sub">Poleć znajomemu – w demo oboje dostajecie 10 zł. Kod do skopiowania albo udostępnienia.</p></a>
+    <a class="featc" href="#/konto/oszczednosci"><span style="font-size:26px">💚</span><h3>Licznik oszczędności</h3><p class="sub">W koncie widać, ile w rok zostaje z −15% i darmowej dostawy. Liczymy tylko nasze ceny.</p></a>
+  </div></div>
 </section>
 
 
@@ -868,6 +943,7 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
   <div class="subtiles" id="lSubs" hidden></div>
   <div class="lfilt" id="lFilt"></div>
   <div class="chips" id="lBrands"></div>
+  <div id="lPop" class="lpop" hidden></div>
   <div class="grid" id="lGrid"></div>
   <div class="pager" id="lPager"></div>
 </div></section></div>
@@ -881,6 +957,7 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
     <details id="hurtD">
       <summary><span>🔒 Dla właścicieli: ceny hurtowe</span><span class="pl">+</span></summary>
       <div class="hin">
+        <div id="hurtBar"></div>
         <p class="note" style="margin:0 0 10px">Ceny z publicznych cenników hurtowni (bez logowania): <b>hurtownia-spozywcza.pl</b>, <b>merkurygdynia.pl</b>, <b>pol-chem.com.pl</b>, <b>chemiashop.pl</b>. Ten sam produkt dopasowany po kodzie EAN. Podstawą ceny jest najtańszy hurt brutto; cena w sklepie = hurt brutto × 1,3, zaokrąglone do ,99. Subskrypcja = detal −15%.</p>
         <div class="tw"><table><thead><tr><th>Produkt</th><th>Ceny w hurtowniach (netto / brutto)</th><th class="r">VAT</th><th class="r">Najtańszy hurt brutto</th><th class="r">Detal</th><th class="r">Marża zł</th><th class="r">Marża %</th><th class="r">Subskr.</th><th class="r">Marża subskr.</th></tr></thead><tbody id="hurtBody"></tbody><tfoot id="hurtFoot"></tfoot></table></div>
         <p class="note">Marża % liczona od ceny hurtowej brutto (narzut). Przy subskrypcji (−15%) marża spada, więc to ona decyduje o opłacalności. Nie wliczono kosztów wysyłki, opakowania i prowizji płatności.</p>
@@ -903,7 +980,7 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
       <form id="nlF" class="nlf"><input id="nlM" type="email" inputmode="email" autocomplete="email" placeholder="Twój e-mail"><button class="btn btn-p">Zapisz się</button><label class="chk"><input type="checkbox" id="nlC"> Zgadzam się na otrzymywanie newslettera. Zgodę mogę wycofać w każdej chwili.</label></form></div>
     <div class="fcols">
       <div><h4>Sklep</h4><a href="#/kategoria/papier">Papier</a><a href="#/kategoria/pranie">Pranie</a><a href="#/kategoria/kuchnia">Zmywanie</a><a href="#/kategoria/sprzatanie">Sprzątanie</a><a href="#/kategoria/folie">Worki i folie</a><a href="#/kategoria/higiena">Higiena i kosmetyki</a><a href="#/kategoria/dziecko">Dziecko</a><a href="#/kategoria/zwierzaki">Zwierzaki</a><a href="#/kategoria/kawa">Kawa i herbata</a><a href="#/kategoria/przekaski">Przekąski</a><a href="#/kategoria/dom">Baterie i żarówki</a><a href="#/produkty">Wszystkie produkty</a></div>
-      <div><h4>Na skróty</h4><a href="#zestawy">Gotowe zestawy</a><a href="#" data-quizf>Zestaw w 30 sekund</a><a href="#/ulubione">Ulubione</a><a href="#/porownaj">Porównywarka cen</a><a href="#/konto">Moje konto</a><a href="#aplikacja">Aplikacja</a></div>
+      <div><h4>Na skróty</h4><a href="#zestawy">Gotowe zestawy</a><a href="#/listy">Gotowe listy</a><a href="#/kalkulator">Kalkulator zużycia</a><a href="#/eko">Eko-tryb</a><a href="#/polecenia">Program poleceń</a><a href="#/poradniki" data-porad-nav hidden>Poradniki</a><a href="#" data-quizf>Zestaw w 30 sekund</a><a href="#/ulubione">Ulubione</a><a href="#/porownaj">Porównywarka cen</a><a href="#/konto">Moje konto</a><a href="#aplikacja">Aplikacja</a></div>
       <div><h4>Pomoc</h4><a href="#/strona/dostawa">Dostawa i płatności</a><a href="#/strona/zwroty">Zwroty i reklamacje (14 dni)</a><a href="#/strona/faq">FAQ</a><a href="#/strona/kontakt">Kontakt</a><a href="#" data-chat>Czat</a></div>
       <div><h4>Domownik</h4><a href="#/strona/o-nas">O nas</a><a href="#/strona/regulamin">Regulamin</a><a href="privacy.html">Polityka prywatności (RODO)</a><a href="#" data-cookies>Ustawienia cookies</a><a href="#/wlasciciele">🔒 Dla właścicieli</a></div>
     </div>
@@ -982,6 +1059,16 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
   <div class="inl"><button class="btn btn-p btn-s" data-ck="all">Akceptuję wszystkie</button><button class="btn btn-o btn-s" data-ck="min">Tylko niezbędne</button><button class="lnk" data-ck="set">Ustawienia</button></div>
 </div>
 
+<div class="cask" id="cAsk" hidden>
+  <div class="cask-card" role="dialog" aria-modal="true" aria-labelledby="cAskT">
+    <p id="cAskT">Wyczyścić koszyk?</p>
+    <p class="sub">Usuniemy z koszyka produkty jednorazowe i subskrypcyjne. Aktywna subskrypcja w koncie zostanie bez zmian.</p>
+    <div class="cask-btns">
+      <button type="button" class="btn btn-o" id="cClearNo">Anuluj</button>
+      <button type="button" class="btn btn-p" id="cClearYes">Wyczyść</button>
+    </div>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -1068,7 +1155,26 @@ function save(){store.set("cart",cart);store.set("ship",ship);store.set("acct",a
 function nextDate(day,from){const t=from?new Date(from):new Date();t.setHours(0,0,0,0);let d=new Date(t.getFullYear(),t.getMonth(),day);if(d<=t)d=new Date(t.getFullYear(),t.getMonth()+1,day);return d}
 function fmtD(d){return `${WD[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]}`}
 function fmtDY(d){return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`}
-let tt;function toast(m){const t=$("#toast");t.innerHTML=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2300)}
+let tt,toastUndo=null;
+function toast(m,opt){
+ const t=$("#toast"),undo=opt&&opt.undo,ms=(opt&&opt.ms)||2300;
+ toastUndo=undo||null;
+ t.innerHTML=undo?`${m} <button type="button" class="tundo" id="tUndo">Cofnij</button>`:m;
+ t.classList.add("on");clearTimeout(tt);
+ tt=setTimeout(()=>{t.classList.remove("on");toastUndo=null},ms);
+}
+$on("#toast").addEventListener("click",e=>{
+ if(e.target.closest("#tUndo")&&toastUndo){const fn=toastUndo;toastUndo=null;clearTimeout(tt);$("#toast").classList.remove("on");fn()}
+});
+function clearCartConfirmed(){
+ if(!cart.length)return;
+ const snap=cart.map(l=>({id:l.id,mode:l.mode,qty:l.qty,f:l.f}));
+ cart=[];changed();
+ toast("Koszyk wyczyszczony",{ms:5000,undo(){cart=snap.slice();changed();toast("Przywrócono koszyk")}});
+}
+$on("#cClearNo").addEventListener("click",()=>{$("#cAsk").hidden=true});
+$on("#cClearYes").addEventListener("click",()=>{$("#cAsk").hidden=true;clearCartConfirmed()});
+$on("#cAsk").addEventListener("click",e=>{if(e.target.id==="cAsk")$("#cAsk").hidden=true});
 function plural(n){return n===1?"produkt":(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?"produkty":"produktów"}
 
 /* ---------- cart logic ---------- */
@@ -1139,11 +1245,12 @@ document.addEventListener("click",e=>{const a=e.target.closest(".pc [data-act]")
   case "dec":{const l=line(id,m);setQty(id,m,l.qty-1);break}
  }});
 /* routing */
-let R={pg:"home"},lsort="pop",lbrand="",lmin="",lmax="",lsubonly=false,pq=1,pf="1m",homeY=0,lpage=1,LP=24,lkey="";
+let R={pg:"home"},lsort="pop",lbrand="",lmin="",lmax="",lsubonly=false,leko=false,pq=1,pf="1m",homeY=0,lpage=1,LP=24,lkey="";
 function go(h){if(location.hash===h)route();else location.hash=h}
 function plN(n){return `${n} ${plural(n)}`}
 function listItems(){
  if(R.kind==="q"){const w=norm(R.q).split(/\s+/).filter(Boolean);return P.filter(p=>w.every(x=>(p._q||searchText(p)).includes(x)))}
+ if(R.kind==="eko"){return P.filter(isEcoOrLarge)}
  if(R.kind==="cat"){let L=P.filter(p=>p.c===R.cat);if(R.sc)L=L.filter(p=>p.sc===R.sc);return L}
  return P.slice()}
 function priceOf(p){return gMode==="sub"?subP(p):p.p}
@@ -1155,6 +1262,7 @@ function renderList(anim){
  let L=base.filter(p=>{
   if(lbrand&&brand(p)!==lbrand)return false;
   if(lsubonly&&p.sub===0)return false;
+  if(leko&&!isEcoOrLarge(p))return false;
   const pr=priceOf(p);
   if(pmin!=null&&!Number.isNaN(pmin)&&pr<pmin)return false;
   if(pmax!=null&&!Number.isNaN(pmax)&&pr>pmax)return false;
@@ -1164,11 +1272,12 @@ function renderList(anim){
  L.sort(S[lsort]||S.pop);
  const catLab=R.kind==="cat"&&CATN[R.cat]?CATN[R.cat]:null;
  const subLab=R.kind==="cat"&&R.sc?SUBN[R.cat+"/"+R.sc]:"";
- const title=R.kind==="cat"?(catLab?(catLab.e+" "+catLab.n+(subLab?" – "+subLab:"")):"Kategoria"):R.kind==="q"?`Wyniki dla „${R.q.replace(/[<>&"]/g,"")}”`:"Wszystkie produkty";
+ const title=R.kind==="cat"?(catLab?(catLab.e+" "+catLab.n+(subLab?" – "+subLab:"")):"Kategoria"):R.kind==="q"?`Wyniki dla „${R.q.replace(/[<>&"]/g,"")}”`:R.kind==="eko"?"🌱 Eko i duże opakowania":"Wszystkie produkty";
  let bc=`<a href="#/">Start</a><span>›</span><a href="#/produkty">Produkty</a>`;
  if(R.kind==="all")bc+=`<span>›</span><span>Wszystkie produkty</span>`;
  else if(R.kind==="cat"&&catLab){bc+=`<span>›</span>`+(R.sc?`<a href="#/kategoria/${R.cat}">${catLab.n}</a><span>›</span><span>${subLab||R.sc}</span>`:`<span>${catLab.n}</span>`)}
  else if(R.kind==="q")bc+=`<span>›</span><span>Szukaj</span>`;
+ else if(R.kind==="eko")bc+=`<span>›</span><span>Eko-tryb</span>`;
  $("#lBc").innerHTML=bc;
  $("#lT").textContent=title;
  $("#lN").textContent=`${plN(L.length)}${R.kind==="cat"&&CDESC[R.cat]?" · "+CDESC[R.cat]:""}`;
@@ -1177,12 +1286,12 @@ function renderList(anim){
  if(subsEl){
   if(R.kind==="cat"&&SUBCATS[R.cat]){
    const counts={};P.filter(p=>p.c===R.cat).forEach(p=>{counts[p.sc]=(counts[p.sc]||0)+1});
-   const tiles=`<a class="subtile${R.sc?"":" on"}" href="#/kategoria/${R.cat}"><b>Wszystko</b><small>${plN(P.filter(p=>p.c===R.cat).length)}</small></a>`+SUBCATS[R.cat].filter(([k])=>k==="inne"?counts[k]:true).map(([k,n])=>`<a class="subtile${R.sc===k?" on":""}" href="#/kategoria/${R.cat}/${k}"><b>${n}</b><small>${counts[k]||0}</small></a>`).join("");
+   const tiles=`<a class="subtile${R.sc?"":" on"}" href="#/kategoria/${R.cat}"><span class="si">${(CATN[R.cat]||{}).e||"🛍️"}</span><b>Wszystko</b><small>${plN(P.filter(p=>p.c===R.cat).length)}</small></a>`+SUBCATS[R.cat].filter(([k])=>k==="inne"?counts[k]:true).map(([k,n])=>`<a class="subtile${R.sc===k?" on":""}" href="#/kategoria/${R.cat}/${k}"><span class="si">${SUBICO[R.cat+"/"+k]||"•"}</span><b>${n}</b><small>${counts[k]||0}</small></a>`).join("");
    subsEl.innerHTML=tiles;subsEl.hidden=false;
   }else{subsEl.innerHTML="";subsEl.hidden=true}
  }
  const filt=$("#lFilt");
- if(filt){filt.innerHTML=`<label class="pr">Cena od <input id="lMin" type="number" inputmode="decimal" min="0" step="1" placeholder="0" value="${lmin}"></label><label class="pr">do <input id="lMax" type="number" inputmode="decimal" min="0" step="1" placeholder="max" value="${lmax}"></label><label class="chk"><input type="checkbox" id="lSub" ${lsubonly?"checked":""}> Tylko do subskrypcji</label>${(lbrand||lmin||lmax||lsubonly)?`<button type="button" class="chip" data-clrfilt>Wyczyść filtry</button>`:""}`}
+ if(filt){filt.innerHTML=`<label class="pr">Cena od <input id="lMin" type="number" inputmode="decimal" min="0" step="1" placeholder="0" value="${lmin}"></label><label class="pr">do <input id="lMax" type="number" inputmode="decimal" min="0" step="1" placeholder="max" value="${lmax}"></label><label class="chk"><input type="checkbox" id="lSub" ${lsubonly?"checked":""}> Tylko do subskrypcji</label><label class="chk"><input type="checkbox" id="lEko" ${leko||R.kind==="eko"?"checked":""} ${R.kind==="eko"?"disabled":""}> 🌱 Eko i duże opakowania</label>${(lbrand||lmin||lmax||lsubonly||(leko&&R.kind!=="eko"))?`<button type="button" class="chip" data-clrfilt>Wyczyść filtry</button>`:""}`}
  const MAXB=18;let brandHTML="";
  if(brands.length>1){
   const freq={};base.forEach(p=>{const b=brand(p);freq[b]=(freq[b]||0)+1});
@@ -1198,7 +1307,7 @@ function renderList(anim){
  $("#lBrands").innerHTML=brandHTML;
  $("#lSort").value=lsort;
 
- const lsig=[R.kind,R.cat||"",R.sc||"",R.q||"",lbrand,lsort,gMode,lmin,lmax,lsubonly].join("|");if(lsig!==lkey){lpage=1;lkey=lsig}
+ const lsig=[R.kind,R.cat||"",R.sc||"",R.q||"",lbrand,lsort,gMode,lmin,lmax,lsubonly,leko].join("|");if(lsig!==lkey){lpage=1;lkey=lsig}
  const pages=Math.max(1,Math.ceil(L.length/LP));if(lpage>pages)lpage=pages;if(lpage<1)lpage=1;
  const slice=L.slice((lpage-1)*LP,lpage*LP);
  $("#lGrid").innerHTML=L.length?slice.map((p,i)=>cardHTML(p,i,anim)).join(""):`<div class="empty2">Nic nie znaleziono. Spróbuj „papier”, „kawa” albo <a href="#/produkty">zobacz wszystkie produkty</a>.</div>`;
@@ -1209,12 +1318,13 @@ function renderList(anim){
   add(Math.min(pages,lpage+1),"→",0,lpage===pages);
   btns+=`<span class="pginfo">${L.length} ${plural(L.length)}</span>`;
   pg.innerHTML=btns}}
+ popularRow();
 }
 $on("#lBrands").addEventListener("click",e=>{const b=e.target.closest("[data-br]");if(!b)return;lbrand=b.dataset.br;renderList(true)});
 $on("#lBrands").addEventListener("change",e=>{if(e.target.id!=="lBrandMore")return;lbrand=e.target.value;renderList(true)});
 $on("#lSort").addEventListener("change",e=>{lsort=e.target.value;renderList(true)});
-$on("#lFilt").addEventListener("change",e=>{if(e.target.id==="lMin")lmin=e.target.value.trim();else if(e.target.id==="lMax")lmax=e.target.value.trim();else if(e.target.id==="lSub")lsubonly=e.target.checked;else return;renderList(true)});
-$on("#lFilt").addEventListener("click",e=>{if(!e.target.closest("[data-clrfilt]"))return;lbrand="";lmin="";lmax="";lsubonly=false;renderList(true)});
+$on("#lFilt").addEventListener("change",e=>{if(e.target.id==="lMin")lmin=e.target.value.trim();else if(e.target.id==="lMax")lmax=e.target.value.trim();else if(e.target.id==="lSub")lsubonly=e.target.checked;else if(e.target.id==="lEko")leko=e.target.checked;else return;renderList(true)});
+$on("#lFilt").addEventListener("click",e=>{if(!e.target.closest("[data-clrfilt]"))return;lbrand="";lmin="";lmax="";lsubonly=false;if(R.kind!=="eko")leko=false;renderList(true)});
 $on("#lPager").addEventListener("click",e=>{const b=e.target.closest("[data-page]");if(!b||b.disabled)return;lpage=+b.dataset.page;renderList(false);const t=$("#lT");if(t)t.scrollIntoView({block:"start",behavior:(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches)?"auto":"smooth"})});
 function renderProd(){
  const p=byId(R.id),b=$("#pBody");
@@ -1256,7 +1366,9 @@ function route(){if(!catalogReady){const cl=$("#catLoad");if(cl)cl.hidden=false;
  if(prev==="home")homeY=window.scrollY;
  if(h.startsWith("#/kategoria/")){const parts=h.slice(12).split("/").filter(Boolean);R={pg:"list",kind:"cat",cat:parts[0]||"",sc:parts[1]||""}}
  else if(h==="#/produkty")R={pg:"list",kind:"all"};
+ else if(h==="#/eko"){R={pg:"list",kind:"eko"};leko=true}
  else if(h.startsWith("#/szukaj"))R={pg:"list",kind:"q",q:new URLSearchParams(h.split("?")[1]||"").get("q")||""};
+ else if(h.startsWith("#/kalkulator")||h.startsWith("#/listy")||h.startsWith("#/poradniki")||h.startsWith("#/polecenia"))R={pg:"page",path:h.slice(2).split("?")[0]};
  else if(h.startsWith("#/produkt/")){R={pg:"prod",id:+h.slice(10)};pq=1;const l=line(R.id,"sub");pf=(l&&l.f)||"1m"}
  else if(h==="#/wlasciciele")R={pg:"owner"};
  else if(h==="#/"||h===""||h==="#"||!h.startsWith("#/"))R={pg:"home",anchor:h.length>1&&!h.startsWith("#/")?h.slice(1):""};
@@ -1290,7 +1402,7 @@ let sT;function doSearch(v,now){v=v.trim();clearTimeout(sT);sT=setTimeout(()=>{i
 /* menu drawer */
 function buildMenu(){if(!$("#mList"))return;$("#mList").innerHTML=`<a href="#/produkty"><span class="ce">🛍️</span>Wszystkie produkty<small>${P.length}</small></a><div class="mt">Kategorie</div>`+
  Object.entries(CATN).map(([k,c])=>`<a href="#/kategoria/${k}"><span class="ce">${c.e}</span>${c.n}<small>${P.filter(p=>p.c===k).length}</small></a>`).join("")+
- `<div class="mt">Domownik</div><a href="#zestawy"><span class="ce">⭐</span>Gotowe zestawy</a><a href="#" data-mq><span class="ce">⚡</span>Zestaw w 30 sekund</a><a href="#jak"><span class="ce">💡</span>Jak to działa</a><a href="#" data-macc><span class="ce">👤</span>Moje konto</a><a href="#/ulubione"><span class="ce">♥</span>Ulubione</a><a href="#/porownaj"><span class="ce">⚖️</span>Porównywarka cen</a><a href="#aplikacja"><span class="ce">📲</span>Aplikacja</a><div class="mt">Pomoc</div><a href="#/strona/dostawa"><span class="ce">🚚</span>Dostawa i płatności</a><a href="#/strona/zwroty"><span class="ce">↩️</span>Zwroty i reklamacje</a><a href="#/strona/faq"><span class="ce">❓</span>FAQ</a><a href="#/strona/kontakt"><span class="ce">✉️</span>Kontakt</a><a href="#/wlasciciele"><span class="ce">🔒</span>Dla właścicieli</a>`}
+ `<div class="mt">Domownik</div><a href="#/listy"><span class="ce">📋</span>Gotowe listy</a><a href="#/kalkulator"><span class="ce">🧮</span>Kalkulator zużycia</a><a href="#/eko"><span class="ce">🌱</span>Eko i duże opakowania</a><a href="#/polecenia"><span class="ce">🎁</span>Program poleceń</a><a href="#/poradniki" data-porad-nav ${POR.length?"":"hidden"}><span class="ce">📖</span>Poradniki</a><a href="#zestawy"><span class="ce">⭐</span>Gotowe zestawy</a><a href="#" data-mq><span class="ce">⚡</span>Zestaw w 30 sekund</a><a href="#jak"><span class="ce">💡</span>Jak to działa</a><a href="#" data-macc><span class="ce">👤</span>Moje konto</a><a href="#/ulubione"><span class="ce">♥</span>Ulubione</a><a href="#/porownaj"><span class="ce">⚖️</span>Porównywarka cen</a><a href="#aplikacja"><span class="ce">📲</span>Aplikacja</a><div class="mt">Pomoc</div><a href="#/strona/dostawa"><span class="ce">🚚</span>Dostawa i płatności</a><a href="#/strona/zwroty"><span class="ce">↩️</span>Zwroty i reklamacje</a><a href="#/strona/faq"><span class="ce">❓</span>FAQ</a><a href="#/strona/kontakt"><span class="ce">✉️</span>Kontakt</a><a href="#/wlasciciele"><span class="ce">🔒</span>Dla właścicieli</a>`}
 $on("#menuBtn").addEventListener("click",()=>openP($("#menu")));
 $on("#mList").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;
  if(a.hasAttribute("data-mq")){e.preventDefault();openQuiz();return}
@@ -1338,12 +1450,13 @@ function renderCart(){
   <div class="row"><span>Dostawa (${SHIP[ship].n})</span><span>${T.shipCost?zl(T.shipCost):"gratis"}</span></div>
   <div class="row tt"><span>Do zapłaty teraz</span><span>${zl(T.total)}</span></div>
   ${T.sub?`<div class="row mo"><span>Potem co miesiąc, ${subDay}. dnia</span><span>${zl(T.monthly)}</span></div>`:""}
-  <button class="btn btn-p" style="width:100%;margin-top:12px" id="toCheckout">Zamów →</button>`;
+  <button class="btn btn-p" style="width:100%;margin-top:12px" id="toCheckout">Zamów →</button>
+  <button type="button" class="clink-foot" id="cClear">Wyczyść koszyk</button>`;
  requestAnimationFrame(()=>{const i=body.querySelector(".bar i");if(i){i.style.width="0";requestAnimationFrame(()=>i.style.width=pct+"%")}});
 }
 $on("#cartBody").addEventListener("click",e=>{const qb=e.target.closest("[data-q]");if(qb){const ci=qb.closest(".ci"),l=line(+ci.dataset.id,ci.dataset.m);setQty(l.id,l.mode,l.qty+(+qb.dataset.q));return}
  const sb=e.target.closest("[data-s]");if(sb){ship=sb.dataset.s;changed()}});
-$on("#cartFoot").addEventListener("click",e=>{if(e.target.closest("#cAgain")){orderAgain(store.get("last",[]).map(x=>[x.id,x.qty]),"Zamów to samo");return}if(e.target.closest("[data-quiz2]")){openQuiz();return}if(e.target.closest("#toCheckout")){openCheckout()}else{const g=e.target.closest("[data-go]");if(g){closeAll();go("#"+g.dataset.go)}}});
+$on("#cartFoot").addEventListener("click",e=>{if(e.target.closest("#cAgain")){orderAgain(store.get("last",[]).map(x=>[x.id,x.qty]),"Zamów to samo");return}if(e.target.closest("[data-quiz2]")){openQuiz();return}if(e.target.closest("#cClear")){$("#cAsk").hidden=false;return}if(e.target.closest("#toCheckout")){openCheckout()}else{const g=e.target.closest("[data-go]");if(g){closeAll();go("#"+g.dataset.go)}}});
 
 /* ---------- overlays ---------- */
 let open=null;
@@ -1351,14 +1464,14 @@ function openP(el){closeAll(true);open=el;el.classList.add("on");$("#ov").classL
 function closeAll(keep){document.querySelectorAll(".drawer.on,.modal.on").forEach(x=>x.classList.remove("on"));if(!keep){$("#ov").classList.remove("on");document.body.classList.remove("lock")}open=null}
 $on("#ov").addEventListener("click",()=>closeAll());
 document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>closeAll()));
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){if($("#cAsk")&&!$("#cAsk").hidden){$("#cAsk").hidden=true;return}closeAll()}});
 $on("#cartBtn").addEventListener("click",()=>openP($("#drawer")));
 $on("#bbBtn").addEventListener("click",()=>openCheckout());
 $on("#cfgGo").addEventListener("click",()=>{if(totals().count)openCheckout();else{go("#zestawy");toast("👇 Zacznij od gotowego zestawu")}});
 
 /* ---------- checkout: one screen ---------- */
 let pay="BLIK", coTitleTxt="", coOpenList=false, ct=Object.assign({name:"",tel:"",mail:"",pt:"",addr:""},store.get("contact",{}));
-const PTS=[["WAW01M","ul. Marszałkowska 10"],["KRA22A","ul. Długa 5"],["SLU01M","ul. Sportowa 1"]];
+const PTS=[["DEMO-WAW","Warszawa · Punkt demo – centrum"],["DEMO-KRK","Kraków · Punkt demo – Rynek Główny (okolice)"],["DEMO-GDA","Gdańsk · Punkt demo – Główne Miasto"],["DEMO-WRO","Wrocław · Punkt demo – Rynek"],["DEMO-POZ","Poznań · Punkt demo – Stary Rynek"],["DEMO-LOD","Łódź · Punkt demo – centrum"],["DEMO-KTW","Katowice · Punkt demo – centrum"],["DEMO-LUB","Lublin · Punkt demo – centrum"],["DEMO-SZZ","Szczecin · Punkt demo – centrum"],["DEMO-BIA","Białystok · Punkt demo – centrum"]];
 function cartMode(){return cart.length&&cart.every(l=>l.mode==="once")?"once":"sub"}
 function setAllMode(m){const nc=[];cart.forEach(l=>{const e=nc.find(x=>x.id===l.id);if(e)e.qty+=l.qty;else nc.push({id:l.id,mode:m,qty:l.qty,f:l.f})});cart=nc;gMode=m;cardMode={};changed()}
 function firstDel(){const d=new Date();d.setDate(d.getDate()+(ship==="kurier"?1:2));return d}
@@ -1368,7 +1481,7 @@ function openCheckout(title){
  coTitleTxt=title||"";prefillAddr();coOpenList=false;$("#coTitle").textContent="Zamówienie";renderCo();openP($("#checkout"));
 }
 function renderCo(){
- const T=totals(),m=cartMode(),mixed=cart.some(l=>l.mode==="sub")&&cart.some(l=>l.mode==="once"),sub=m==="sub";
+ const T=applyRefDiscount(Object.assign({},totals())),m=cartMode(),mixed=cart.some(l=>l.mode==="sub")&&cart.some(l=>l.mode==="once"),sub=m==="sub";
  const once=cart.reduce((s,l)=>s+byId(l.id).p*l.qty,0),subG=cart.reduce((s,l)=>s+subP(byId(l.id))*l.qty,0);
  const shipFor=g=>g>=FREE?0:SHIP[ship].p;
  const thumbs=cart.slice(0,4).map(l=>`<span>${pic(byId(l.id))}</span>`).join("");
@@ -1386,8 +1499,9 @@ function renderCo(){
    <div class="fld w2"><label for="coName">Imię i nazwisko</label><input id="coName" data-k="name" autocomplete="name" placeholder="Jan Kowalski" value="${val("name")}"></div>
    <div class="fld"><label for="coTel">Telefon</label><input id="coTel" data-k="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="600 100 200" value="${val("tel")}"></div>
    <div class="fld"><label for="coMail">E-mail</label><input id="coMail" data-k="mail" type="email" inputmode="email" autocomplete="email" placeholder="jan@przyklad.pl" value="${val("mail")}"></div>
-   ${ship==="paczkomat"?`<div class="fld w2"><label for="coPt">📦 Paczkomat InPost <span style="font-weight:500;color:var(--mut)">· ${SHIP.paczkomat.d}, ${shipFor(T.goods)?zl(SHIP.paczkomat.p):"gratis"}</span></label><input id="coPt" data-k="pt" autocomplete="off" autocapitalize="characters" placeholder="Kod, np. WAW01M" value="${val("pt")}">
-    <div class="ptq">${ptsList().map(([c,a])=>`<button data-pt="${c}" class="${ct.pt===c?"on":""}">📍 ${c} · ${a}</button>`).join("")}<button data-ship="kurier">🚚 Wolę kuriera</button></div></div>`
+   ${ship==="paczkomat"?`<div class="fld w2"><label for="coPt">📦 Punkt odbioru (demo) <span style="font-weight:500;color:var(--mut)">· ${SHIP.paczkomat.d}, ${shipFor(T.goods)?zl(SHIP.paczkomat.p):"gratis"}</span></label><input id="coPt" data-k="pt" autocomplete="off" autocapitalize="characters" placeholder="Wybierz punkt na mapie albo z listy" value="${val("pt")}">
+    <p class="mapnote">Wersja demo — przykładowe punkty na mapie OpenStreetMap. To nie są potwierdzone lokalizacje InPost i nie podajemy zmyślonych adresów ulic.</p><div id="coMap" class="comap"></div>
+    <div class="ptq">${ptsList().map(([c,a])=>`<button data-pt="${c}" class="${ct.pt===c?"on":""}">📍 ${a}</button>`).join("")}<button data-ship="kurier">🚚 Wolę kuriera</button></div></div>`
    :`<div class="fld w2"><label for="coAddr">🚚 Adres dla kuriera <span style="font-weight:500;color:var(--mut)">· ${SHIP.kurier.d}, ${shipFor(T.goods)?zl(SHIP.kurier.p):"gratis"}</span></label><input id="coAddr" data-k="addr" autocomplete="street-address" placeholder="ul. Przykładowa 1/2, 00-001 Miasto" value="${val("addr")}">
     <div class="ptq"><button data-ship="paczkomat">📦 Jednak paczkomat (taniej)</button></div></div>`}
   </div>
@@ -1403,6 +1517,7 @@ function renderCo(){
   <p class="cofine">${sub?`Pierwsza paczka ${fmtD(firstDel())}. Kolejne co miesiąc (${fmtD(nextCycle())}) – 3 dni wcześniej zapytamy SMS-em, czy jak zwykle. Anulujesz w 1 klik.`:`Paczka ${fmtD(firstDel())}. Bez konta i bez subskrypcji.`}</p>
   <div class="cotrust"><span>🔒 Bezpieczna płatność</span><span>↩️ 14 dni na zwrot</span><span>✋ Bez zobowiązań</span></div>
   <p class="cofine" style="margin-bottom:calc(10px + var(--safe))">Demo: bez danych karty, nic nie zostanie pobrane. Składając zamówienie akceptujesz <a href="#/strona/regulamin">regulamin</a>.</p>`;
+ if(ship==="paczkomat")renderCoMap();
 }
 $on("#coBody").addEventListener("input",e=>{const k=e.target.dataset&&e.target.dataset.k;if(k){ct[k]=e.target.value;e.target.classList.remove("bad");if(k==="pt")document.querySelectorAll("[data-pt]").forEach(b=>b.classList.toggle("on",b.dataset.pt===e.target.value.trim().toUpperCase()))}});
 $on("#coBody").addEventListener("click",e=>{
@@ -1498,7 +1613,7 @@ function renderAcc(){
    <div class="inl"><input type="date" id="vacFrom" value="${vacOn?a.vac.from:iso(defF)}"><input type="date" id="vacTo" value="${vacOn?a.vac.to:iso(defT)}"></div>
    <div class="inl"><button class="btn btn-p btn-s" style="flex:1" data-a="vacSave">Zapisz urlop</button>${vacOn?`<button class="btn btn-o btn-s" data-a="vacClear">Usuń</button>`:""}</div></div>
   <div class="box"><h4>😱 Kończy mi się!</h4><p>Zabrakło czegoś przed dostawą? Wyślemy jeden produkt od razu, poza cyklem – w cenie subskrypcyjnej, paczkomat w 1–2 dni.</p>
-   <div class="inl"><select id="rushSel">${P.map(p=>`<option value="${p.id}">${p.n} – ${zl(subP(p))}</option>`).join("")}</select><button class="btn btn-p btn-s" data-a="rush">Dowieź</button></div></div>
+   <div class="inl"><select id="rushSel">${(a.items.map(l=>byId(l.id)).filter(Boolean).concat(P.filter(p=>hasPic(p)).slice(0,60)).filter((p,i,arr)=>arr.findIndex(x=>x.id===p.id)===i).slice(0,80)).map(p=>`<option value="${p.id}">${p.n} – ${zl(subP(p))}</option>`).join("")}</select><button class="btn btn-p btn-s" data-a="rush">Dowieź</button></div></div>
   <div class="box"><h4>🔔 Przypomnienia przed dostawą</h4><p>Gdzie i kiedy mamy pytać, czy wszystko jak zwykle.</p>
    <div class="seg3">${Object.entries(CH).map(([k,v])=>`<button data-a="ch" data-v="${k}" class="${a.rem.ch===k?"on":""}">${k==="sms"?"💬":k==="push"?"📱":"✉️"} ${v==="push"?"Push":v==="e-mail"?"E-mail":v}</button>`).join("")}</div>
    <div class="inl"><span style="font-size:14px;color:#475569">Ile dni przed dostawą:</span><select id="remDays">${[1,2,3,4,5].map(n=>`<option value="${n}" ${n===a.rem.days?"selected":""}>${n} ${n===1?"dzień":"dni"}</option>`).join("")}</select></div></div>
@@ -1658,8 +1773,8 @@ $("#appHint").textContent=PLAT==="desktop"?"💻 Jesteś na komputerze – otwó
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const NEW_IDS=[44,45,46,47,50,51];
 function stock(p){return ((p.id*37)%53)+3}
-function badgeHTML(p){const b=[];if(p.old)b.push(["promo",`Promocja −${Math.round((1-p.p/p.old)*100)}%`]);if(BEST.includes(p))b.push(["best","Bestseller"]);if(NEW_IDS.includes(p.id))b.push(["new","Nowość"]);if(stock(p)<=8)b.push(["low","Ostatnie sztuki"]);
- return b.length?`<span class="bdg">${b.slice(0,2).map(([k,t])=>`<i class="${k}">${t}</i>`).join("")}</span>`:""}
+function badgeHTML(p){const b=[];if(p.old)b.push(["promo",`Promocja −${Math.round((1-p.p/p.old)*100)}%`]);if(typeof isEco==="function"&&isEco(p))b.push(["eco","Eko"]);else if(typeof isLarge==="function"&&isLarge(p))b.push(["bigpack","Duże opakowanie"]);if(BEST.includes(p))b.push(["best","Bestseller"]);if(NEW_IDS.includes(p.id))b.push(["new","Nowość"]);if(stock(p)<=8)b.push(["low","Ostatnie sztuki"]);
+ return b.length?`<span class="bdg">${b.slice(0,3).map(([k,t])=>`<i class="${k}">${t}</i>`).join("")}</span>`:""}
 /* ulubione */
 let favs=store.get("fav",[]);
 function isFav(id){return favs.includes(id)}
@@ -1772,11 +1887,13 @@ function authForm(){return `<div class="auth"><div class="seg3"><button data-at=
  <div class="or"><span>albo</span></div><button class="btn btn-o" style="width:100%" data-guest>Kupuj bez konta – załóżmy je przy zamówieniu</button></div>`}
 function accountPage(){const u=user();pageTitle="Moje konto";
  if(!u)return `<nav class="bc"><a href="#/">Start</a><span>›</span><span>Konto</span></nav><h1 class="ph">Moje konto</h1><div class="pcard" style="max-width:480px">${authForm()}</div>`;
- const T={zamowienia:"📦 Zamówienia",subskrypcja:"🔁 Subskrypcja",adresy:"📍 Adresy",ulubione:"♥ Ulubione",dane:"👤 Dane"};
+ const T={zamowienia:"📦 Zamówienia",subskrypcja:"🔁 Subskrypcja",oszczednosci:"💚 Oszczędności",polecenia:"🎁 Polecenia",adresy:"📍 Adresy",ulubione:"♥ Ulubione",dane:"👤 Dane"};
  let body="";
  if(accTab==="zamowienia")body=orders.length?`<div class="olist">${orders.map(orderCard).join("")}</div>`:`<div class="empty2">Nie masz jeszcze zamówień. <a href="#/produkty">Zacznij zakupy</a> albo <a href="#" data-quiz3>dobierz zestaw w 30 s</a>.</div>`;
- if(accTab==="subskrypcja"){const a=acct;body=a?`<div class="pcard"><b>${a.paused?"⏸ Wstrzymana":"● Aktywna"}</b> · ${a.items.length} produktów · dostawa ${a.day}. dnia miesiąca<p class="sub">Najbliższa: ${fmtDY(effNext(normAcct(a)))}. Zmieniasz ilości, pomijasz miesiąc, ustawiasz urlop i rytm produktów w panelu.</p><button class="btn btn-p" data-accp>Zarządzaj subskrypcją</button></div>`
-  :`<div class="pcard"><p>Nie masz jeszcze subskrypcji. Subskrypcja = −15% na wszystko i przypomnienie przed każdą dostawą.</p><button class="btn btn-p" data-quiz3>⚡ Dobierz zestaw w 30 s</button> <button class="btn btn-o" data-accp>Zobacz przykładowy panel</button></div>`}
+ if(accTab==="subskrypcja"){const a=acct;body=(a?saveCardHTML(a):"")+(a?`<div class="pcard"><b>${a.paused?"⏸ Wstrzymana":"● Aktywna"}</b> · ${a.items.length} produktów · dostawa ${a.day}. dnia miesiąca<p class="sub">Najbliższa: ${fmtDY(effNext(normAcct(a)))}. Zmieniasz ilości, pomijasz miesiąc, ustawiasz urlop i rytm produktów w panelu.</p><button class="btn btn-p" data-accp>Zarządzaj subskrypcją</button></div>`
+  :`<div class="pcard"><p>Nie masz jeszcze subskrypcji. Subskrypcja = −15% na wszystko i przypomnienie przed każdą dostawą.</p><button class="btn btn-p" data-quiz3>⚡ Dobierz zestaw w 30 s</button> <button class="btn btn-o" data-accp>Zobacz przykładowy panel</button> <a class="btn btn-o" href="#/kalkulator">Kalkulator zużycia</a></div>`)}
+ if(accTab==="oszczednosci"){const a=acct?normAcct(acct):null;body=saveCardHTML(a)+`<div class="pcard"><p class="sub">Licznik liczy wyłącznie różnicę między naszą ceną regularną a ceną subskrypcyjną (−15%) oraz ewentualną darmową dostawę od ${FREE} zł (zamiast ${zl(SHIP.paczkomat.p)}). Nie porównujemy z innymi sklepami.</p>${a?"":`<a class="btn btn-p" href="#/kalkulator">Dobierz zapas w kalkulatorze</a>`}</div>`}
+ if(accTab==="polecenia")body=`<div class="refbox"><small>Twój kod</small><div class="refcode">${refCode()}</div><p class="sub" style="margin:8px 0">W demo oboje dostajecie 10 zł. Link: ${esc(refLink())}</p><div class="inl"><button class="btn btn-p" data-refcopy>Kopiuj link</button> <button class="btn btn-o" data-refshare>Udostępnij</button></div></div>${store.get("refFrom","")?`<p style="margin-top:14px">🎟️ Kod polecający <b>${esc(store.get("refFrom"))}</b> zapamiętany w tej przeglądarce.</p>`:""}`;
  if(accTab==="adresy"){const A=store.get("addrs",[]);body=`<div class="pcard">${A.length?A.map((a,i)=>`<div class="arow"><span>${a.t==="paczkomat"?"📦 Paczkomat":"🚚 Adres"}: <b>${esc(a.v)}</b>${i===0?` <span class="ost s3">domyślny</span>`:""}</span><span>${i?`<button class="lnk" data-ad="def" data-i="${i}">Ustaw domyślny</button>`:""}<button class="lnk" style="color:#ef4444" data-ad="del" data-i="${i}">Usuń</button></span></div>`).join(""):`<p class="sub">Brak zapisanych adresów – zapiszą się same przy zamówieniu.</p>`}
   <form id="adF" class="inl" style="margin-top:12px"><select id="adT"><option value="paczkomat">📦 Paczkomat</option><option value="kurier">🚚 Adres kuriera</option></select><input id="adV" placeholder="np. WAW01M albo ul. Lipowa 1, Słubice"><button class="btn btn-p btn-s" type="submit">Dodaj</button></form></div>`}
  if(accTab==="ulubione")body=favs.length?`<div class="grid">${favs.map(byId).filter(Boolean).map((p,i)=>cardHTML(p,i)).join("")}</div>`:`<div class="empty2">Brak ulubionych. Kliknij ♡ przy produkcie.</div>`;
@@ -1842,6 +1959,10 @@ function renderPage(soft){const p=R.path||"",[a,b,c]=p.split("/");let h=null;
  else if(a==="ulubione"){pageTitle="Ulubione";h=`<nav class="bc"><a href="#/">Start</a><span>›</span><span>Ulubione</span></nav><h1 class="ph">♥ Ulubione</h1><p class="sub">${plN(favs.length)}</p>${favs.length?`<div class="grid">${favs.map(byId).filter(Boolean).map((x,i)=>cardHTML(x,i)).join("")}</div><div class="inl" style="margin-top:14px"><button class="btn btn-p" data-favall>Dodaj wszystkie do koszyka</button></div>`:`<div class="empty2">Nic tu jeszcze nie ma. Kliknij ♡ przy produkcie, żeby go zapamiętać.<br><br><a class="btn btn-p" href="#/produkty">Przeglądaj produkty</a></div>`}`}
  else if(a==="porownaj")h=cmpPage();
  else if(a==="strona")h=infoPage(b);
+ else if(a==="poradniki")h=poradPage(b);
+ else if(a==="listy")h=listyPage(b);
+ else if(a==="kalkulator")h=kalkPage();
+ else if(a==="polecenia")h=referralPage();
  $("#gBody").innerHTML=h||nf();if(!soft)document.title=`${pageTitle||"Domownik"} – Domownik`}
 $on("#gBody").addEventListener("click",e=>{const t=e.target;
  const at=t.closest("[data-at]");if(at){authTab=at.dataset.at;renderPage();return}
@@ -1859,6 +1980,11 @@ $on("#gBody").addEventListener("click",e=>{const t=e.target;
  const ca=t.closest("[data-cadd]");if(ca){addItem(+ca.dataset.cadd,gMode,1);toast("✅ W koszyku");return}
  const cc=t.closest("[data-ccat]");if(cc){R.cmpCat=cc.dataset.ccat;renderPage();return}
  if(t.closest("[data-favall]")){favs.forEach(id=>{if(!line(id,gMode))addItem(id,gMode,1)});toast("✅ Ulubione w koszyku");return}
+ const la=t.closest("[data-listadd]");if(la){addListToSub(buildListItems(la.dataset.listadd));const L=LISTDEF.find(x=>x.id===la.dataset.listadd);openCheckout(L?"Lista „"+L.n+"”":"Gotowa lista");return}
+ const ca2=t.closest("[data-calcadd]");if(ca2){addListToSub(calcPlan());openCheckout("Zestaw z kalkulatora");return}
+ const cb=t.closest("[data-calc]");if(cb){const k=cb.dataset.calc;if(k==="n")calc.n=+cb.dataset.v;else calc[k]=!calc[k];renderPage();return}
+ if(t.closest("[data-refcopy]")){e.preventDefault();const u=refLink();(navigator.clipboard&&navigator.clipboard.writeText(u)?navigator.clipboard.writeText(u):Promise.reject()).then(()=>toast("🔗 Link skopiowany")).catch(()=>{toast("Skopiuj kod: "+refCode())});return}
+ if(t.closest("[data-refshare]")){e.preventDefault();const u=refLink();if(navigator.share)navigator.share({title:"Domownik",text:"Kod polecający "+refCode(),url:u}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(u).then(()=>toast("🔗 Link skopiowany"));return}
  const qb=t.closest(".qa>button");if(qb){const qa=qb.parentElement,was=qa.classList.contains("open");document.querySelectorAll("#gBody .qa").forEach(x=>x.classList.remove("open"));if(!was)qa.classList.add("open")}});
 $on("#gBody").addEventListener("input",e=>{if(e.target.id==="auPass"&&$("#pwBar")){const v=e.target.value,s=(v.length>=8)+(/[A-Z]/.test(v)&&/[a-z]/.test(v))+/\d/.test(v)+/[^A-Za-z0-9]/.test(v);const b=$("#pwBar");b.style.width=s*25+"%";b.style.background=["#ef4444","#ef4444","#f59e0b","#14b8a6","#0f766e"][s]}});
 $on("#gBody").addEventListener("submit",e=>{e.preventDefault();const f=e.target;
@@ -1929,6 +2055,7 @@ function applyCatalog(list){
  const cl=$("#catLoad");if(cl)cl.hidden=true;
  const a=$("#allN");if(a)a.textContent=`Zobacz wszystkie ${P.length} produktów →`;
  buildMenu();
+ if(typeof extrasReady==="function")extrasReady();
  renderBundles();
  heroMock();
  favBadge();
@@ -1951,7 +2078,382 @@ function loadCatalog(){
  });
 }
 
+/* ===== Extras: eko, listy, kalkulator, poradniki, mapa, konto, mega-menu, owner ===== */
+const ECO_RE=/\b(eko|eco|bio|organic|organicz|ekologicz|roślin|roslin|vegan|wege|biodegrad|refill|uzupełn|uzupeln|koncentrat|bambus|bamboo)\b|eko-|eco-|bio-/i;
+function prodTxt(p){return [p.n||"",p.b||"",p.m||""].join(" ")}
+function isEco(p){return ECO_RE.test(prodTxt(p))}
+function meas(s,unit){const m=String(s).match(new RegExp("(\\d+[.,]?\\d*)\\s*"+unit,"i"));return m?parseFloat(m[1].replace(",",".")):0}
+function isLarge(p){
+  if(p.c==="dziecko"&&/pieluszk|rozmiar/i.test(prodTxt(p)))return false;
+  const s=prodTxt(p);
+  if(meas(s,"kg")>=3||meas(s,"l\\b")>=3)return true;
+  const pr=s.match(/(\d+)\s*prań/i);if(pr&&+pr[1]>=40)return true;
+  const szt=s.match(/(\d+)\s*(szt|tabletek|kapsu)/i);
+  if(szt&&+szt[1]>=60&&(p.c==="pranie"||p.c==="kuchnia"))return true;
+  return false;
+}
+function isEcoOrLarge(p){return isEco(p)||isLarge(p)}
+function ecoKind(p){return isEco(p)?"eco":isLarge(p)?"bigpack":""}
+
+const SUBICO={"papier/toaletowy":"🧻","papier/reczniki":"🧺","papier/chusteczki":"🤧","papier/inne":"📄",
+"pranie/proszki":"📦","pranie/zele":"🧴","pranie/kapsulki":"💊","pranie/plukanie":"💜","pranie/odplamiacze":"✨","pranie/inne":"👕",
+"kuchnia/plyny-naczynia":"🍽️","kuchnia/zmywarka":"🔲","kuchnia/sol-nablyszczacz":"💎","kuchnia/inne":"🍴",
+"sprzatanie/uniwersalne":"🧽","sprzatanie/lazienka-wc":"🚽","sprzatanie/kuchnia":"🍳","sprzatanie/szyby":"🪟","sprzatanie/dezynfekcja":"🛡️","sprzatanie/odswiezacze":"🌸","sprzatanie/owady":"🐜","sprzatanie/akcesoria":"🧹","sprzatanie/inne":"✨",
+"folie/worki":"🗑️","folie/folie":"📄","folie/zmywaki":"🫧","folie/rekawice":"🧤","folie/inne":"📦",
+"higiena/mydla-zele":"🧼","higiena/szampony":"💆","higiena/jama-ustna":"😁","higiena/dezodoranty":"💨","higiena/pielegnacja":"🫶","higiena/golenie":"🪒","higiena/damska":"🌸","higiena/inne":"🧴",
+"dziecko/pieluszki":"🧷","dziecko/chusteczki":"🧸","dziecko/pielegnacja":"🍼","dziecko/inne":"👶",
+"zwierzaki/kot":"🐱","zwierzaki/pies":"🐶","zwierzaki/zwirek":"🪴","zwierzaki/inne":"🐾",
+"kawa/ziarnista":"☕","kawa/mielona":"🫖","kawa/rozpuszczalna":"🥄","kawa/kapsulki":"📦","kawa/herbata-czarna":"🖤","kawa/herbata-zielona":"💚","kawa/herbata-owocowa":"🍎","kawa/inne":"☕",
+"przekaski/orzeszki-chipsy":"🥨","przekaski/slodycze":"🍫","przekaski/napoje":"🥤","przekaski/inne":"🍪",
+"dom/baterie":"🔋","dom/zarowki":"💡","dom/inne":"🏠"};
+
+function pickBest(fn){
+  const L=P.filter(p=>fn(p));
+  L.sort((a,b)=>(hasPic(b)-hasPic(a))||(isEco(b)-isEco(a))||pop(b)-pop(a)||a.p-b.p);
+  return L[0]||null;
+}
+function usedSet(arr){return new Set(arr.filter(Boolean).map(p=>p.id))}
+function pickFree(fn,used){return pickBest(p=>fn(p)&&!used.has(p.id))}
+
+const LISTDEF=[
+ {id:"pierwsze-mieszkanie",e:"🔑",n:"Pierwsze mieszkanie",d:"Podstawy chemii i papieru, żeby ruszyć na swoim."},
+ {id:"przeprowadzka",e:"📦",n:"Przeprowadzka / remont",d:"Worki, rękawice, mocne sprzątanie po ekipie."},
+ {id:"swieta",e:"🎄",n:"Sprzątanie świąteczne",d:"Kuchnia, szyby, worki i zapas przed gośćmi."},
+ {id:"wyprawka",e:"👶",n:"Wyprawka dla dziecka",d:"Pieluszki, chusteczki i delikatne pranie."},
+ {id:"biuro",e:"💼",n:"Biuro",d:"Papier, kawa, herbata, mydło i worki do kosza."}
+];
+
+function buildListItems(id){
+  const u=new Set(),out=[];
+  const add=(fn,qty,f)=>{const p=pickFree(fn,u);if(!p)return;u.add(p.id);out.push({p,qty:qty||1,f:f||"1m"})};
+  if(id==="pierwsze-mieszkanie"){
+    add(p=>p.c==="papier"&&p.sc==="toaletowy",1,"1m");
+    add(p=>p.c==="papier"&&p.sc==="reczniki",1,"1m");
+    add(p=>p.c==="pranie"&&p.sc==="kapsulki"||(p.c==="pranie"&&p.sc==="zele"),1,"1m");
+    add(p=>p.c==="pranie"&&p.sc==="plukanie",1,"2m");
+    add(p=>p.c==="kuchnia"&&p.sc==="plyny-naczynia",1,"1m");
+    add(p=>p.c==="kuchnia"&&p.sc==="zmywarka",1,"1m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="uniwersalne",1,"1m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="lazienka-wc",1,"1m");
+    add(p=>p.c==="folie"&&p.sc==="worki",1,"1m");
+    add(p=>p.c==="folie"&&p.sc==="zmywaki",1,"2m");
+    add(p=>p.c==="higiena"&&p.sc==="mydla-zele",1,"1m");
+    add(p=>p.c==="dom"&&p.sc==="baterie",1,"2m");
+  }else if(id==="przeprowadzka"){
+    add(p=>p.c==="folie"&&p.sc==="worki"&&/60|120|240/.test(prodTxt(p)),2,"1m");
+    add(p=>p.c==="folie"&&p.sc==="rekawice",1,"2m");
+    add(p=>p.c==="folie"&&p.sc==="zmywaki",1,"1m");
+    add(p=>p.c==="papier"&&p.sc==="reczniki",2,"1m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="uniwersalne",2,"1m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="szyby",1,"1m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="lazienka-wc",1,"1m");
+    add(p=>p.c==="sprzatanie"&&(p.sc==="dezynfekcja"||p.sc==="akcesoria"),1,"1m");
+    add(p=>p.c==="kuchnia"&&p.sc==="plyny-naczynia",1,"1m");
+  }else if(id==="swieta"){
+    add(p=>p.c==="sprzatanie"&&p.sc==="kuchnia",1,"1m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="uniwersalne",1,"1m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="szyby",1,"1m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="odswiezacze",1,"1m");
+    add(p=>p.c==="folie"&&p.sc==="worki",1,"1m");
+    add(p=>p.c==="folie"&&p.sc==="folie",1,"2m");
+    add(p=>p.c==="papier"&&p.sc==="reczniki",1,"1m");
+    add(p=>p.c==="kuchnia"&&p.sc==="plyny-naczynia",1,"1m");
+    add(p=>p.c==="kuchnia"&&p.sc==="zmywarka",1,"1m");
+    add(p=>p.c==="przekaski"&&p.sc==="slodycze",1,"1m");
+  }else if(id==="wyprawka"){
+    add(p=>p.c==="dziecko"&&p.sc==="pieluszki",2,"2w");
+    add(p=>p.c==="dziecko"&&p.sc==="chusteczki",2,"1m");
+    add(p=>p.c==="dziecko"&&p.sc==="pielegnacja",1,"1m");
+    add(p=>p.c==="pranie"&&/sensitiv|delikat|baby|dzieci/i.test(prodTxt(p)),1,"1m");
+    add(p=>p.c==="pranie"&&p.sc==="plukanie",1,"1m");
+    add(p=>p.c==="papier"&&p.sc==="chusteczki",1,"1m");
+    add(p=>p.c==="higiena"&&p.sc==="mydla-zele",1,"1m");
+  }else if(id==="biuro"){
+    add(p=>p.c==="papier"&&p.sc==="toaletowy",1,"1m");
+    add(p=>p.c==="papier"&&p.sc==="reczniki",1,"1m");
+    add(p=>p.c==="papier"&&p.sc==="chusteczki",1,"1m");
+    add(p=>p.c==="higiena"&&p.sc==="mydla-zele",1,"1m");
+    add(p=>p.c==="folie"&&p.sc==="worki",1,"1m");
+    add(p=>p.c==="kawa"&&(p.sc==="mielona"||p.sc==="ziarnista"||p.sc==="rozpuszczalna"),1,"2w");
+    add(p=>p.c==="kawa"&&String(p.sc).indexOf("herbata")===0,1,"1m");
+    add(p=>p.c==="przekaski"&&p.sc==="orzeszki-chipsy",1,"1m");
+    add(p=>p.c==="dom"&&p.sc==="baterie",1,"2m");
+    add(p=>p.c==="sprzatanie"&&p.sc==="uniwersalne",1,"2m");
+  }
+  return out;
+}
+function listTotals(items){
+  const reg=items.reduce((s,x)=>s+x.p.p*x.qty,0),sp=items.reduce((s,x)=>s+subP(x.p)*x.qty,0);
+  const month=items.reduce((s,x)=>s+subP(x.p)*x.qty*(FREQ[x.f]?FREQ[x.f][1]:1),0);
+  return {reg,sp,month,save:reg-sp};
+}
+function addListToSub(items){
+  items.forEach(x=>{const l=line(x.p.id,"sub");if(l){l.qty+=x.qty;l.f=x.f||l.f||"1m"}else cart.push({id:x.p.id,mode:"sub",qty:x.qty,f:x.f||"1m"})});
+  changed(true);
+}
+
+/* ----- kalkulator ----- */
+let calc={n:2,baby:false,cat:false,dog:false};
+function calcPlan(){
+  const n=calc.n||2,u=new Set(),items=[];
+  const add=(fn,qty,f)=>{const p=pickFree(fn,u);if(!p)return;u.add(p.id);items.push({p,qty:Math.max(1,qty||1),f:f||"1m"})};
+  add(p=>p.c==="papier"&&p.sc==="toaletowy",n<=2?1:2,"1m");
+  add(p=>p.c==="papier"&&p.sc==="reczniki",1,"1m");
+  add(p=>p.c==="pranie"&&(p.sc==="kapsulki"||p.sc==="zele"||p.sc==="proszki"),n>=4?2:1,"1m");
+  add(p=>p.c==="pranie"&&p.sc==="plukanie",1,n>=3?"1m":"2m");
+  add(p=>p.c==="kuchnia"&&p.sc==="plyny-naczynia",n>=4?2:1,"1m");
+  add(p=>p.c==="kuchnia"&&p.sc==="zmywarka",1,"1m");
+  add(p=>p.c==="sprzatanie"&&p.sc==="uniwersalne",1,"1m");
+  add(p=>p.c==="sprzatanie"&&p.sc==="lazienka-wc",1,"1m");
+  add(p=>p.c==="folie"&&p.sc==="worki",1,"1m");
+  add(p=>p.c==="higiena"&&p.sc==="mydla-zele",n>=3?2:1,"1m");
+  add(p=>p.c==="higiena"&&p.sc==="szampony",1,"1m");
+  if(calc.baby){
+    add(p=>p.c==="dziecko"&&p.sc==="pieluszki",2,"2w");
+    add(p=>p.c==="dziecko"&&p.sc==="chusteczki",2,"1m");
+    add(p=>p.c==="dziecko"&&p.sc==="pielegnacja",1,"1m");
+  }
+  if(calc.cat){
+    add(p=>p.c==="zwierzaki"&&p.sc==="kot",1,"1m");
+    add(p=>p.c==="zwierzaki"&&p.sc==="zwirek",1,"1m");
+  }
+  if(calc.dog) add(p=>p.c==="zwierzaki"&&p.sc==="pies",1,"1m");
+  add(p=>p.c==="kawa"&&(p.sc==="mielona"||p.sc==="ziarnista"||p.sc==="rozpuszczalna"),1,"2w");
+  return items;
+}
+
+/* ----- poradniki (loaded, never invented) ----- */
+let POR=[];
+function loadPoradniki(){
+  const urls=["./poradniki.json","./incoming/poradniki.json"];
+  const pull=i=>fetch(urls[i],{credentials:"same-origin"}).then(r=>{if(!r.ok)throw r;return r.json()}).catch(e=>{if(i+1<urls.length)return pull(i+1);return []});
+  return pull(0).then(list=>{
+    POR=Array.isArray(list)?list.filter(a=>a&&a.slug&&a.title):[];
+    document.querySelectorAll("[data-porad-nav]").forEach(el=>{el.hidden=!POR.length});
+    if(typeof buildMenu==="function"&&catalogReady)buildMenu();
+    if(typeof buildCatbar==="function"&&catalogReady)buildCatbar();
+    const home=$("#homePorad");
+    if(home){home.hidden=!POR.length;if(POR.length){const box=$("#homePoradList");if(box)box.innerHTML=POR.map(a=>`<a class="artc" href="#/poradniki/${encodeURIComponent(a.slug)}"><h3>${esc(a.title)}</h3><p class="sub">${esc(a.lead||"")}${a.read_min?` · ${a.read_min} min`:""}</p></a>`).join("")}}
+    return POR;
+  }).catch(()=>{POR=[];document.querySelectorAll("[data-porad-nav]").forEach(el=>el.hidden=true);const home=$("#homePorad");if(home)home.hidden=true;return []});
+}
+function sanitizePorad(html){
+  const allow={P:1,H3:1,UL:1,LI:1};
+  const d=document.createElement("div");
+  d.innerHTML=String(html||"");
+  (function walk(n){
+    [...n.childNodes].forEach(ch=>{
+      if(ch.nodeType===1){
+        if(!allow[ch.tagName]){
+          const par=ch.parentNode;
+          while(ch.firstChild)par.insertBefore(ch.firstChild,ch);
+          par.removeChild(ch);
+        }else{
+          while(ch.attributes&&ch.attributes.length)ch.removeAttribute(ch.attributes[0].name);
+          walk(ch);
+        }
+      }else if(ch.nodeType===8){ch.remove()}
+    });
+  })(d);
+  return d.innerHTML;
+}
+function poradPage(slug){
+  if(!POR.length){pageTitle="Poradniki";return `<nav class="bc"><a href="#/">Start</a><span>›</span><span>Poradniki</span></nav><h1 class="ph">Poradniki</h1><div class="empty2">Poradniki pojawią się wkrótce.</div>`}
+  if(!slug){pageTitle="Poradniki";return `<nav class="bc"><a href="#/">Start</a><span>›</span><span>Poradniki</span></nav><h1 class="ph">Poradniki</h1><p class="sub">Krótkie teksty, które pomagają dobrać chemię do domu.</p><div class="artlist">${POR.map(a=>`<a class="artc" href="#/poradniki/${encodeURIComponent(a.slug)}"><h3>${esc(a.title)}</h3><p class="sub">${esc(a.lead||"")}${a.read_min?` · ${a.read_min} min czytania`:""}</p></a>`).join("")}</div>`}
+  const a=POR.find(x=>x.slug===slug);
+  if(!a){pageTitle="Poradnik";return `<nav class="bc"><a href="#/">Start</a><span>›</span><a href="#/poradniki">Poradniki</a></nav><div class="empty2">Nie ma takiego poradnika. <a href="#/poradniki">Wróć do listy</a></div>`}
+  pageTitle=a.title;
+  const linked=(a.product_ids||[]).map(id=>byId(+id)).filter(Boolean);
+  return `<nav class="bc"><a href="#/">Start</a><span>›</span><a href="#/poradniki">Poradniki</a><span>›</span><span>${esc(a.title)}</span></nav>
+   <h1 class="ph">${esc(a.title)}</h1>${a.lead?`<p class="sub">${esc(a.lead)}${a.read_min?` · ${a.read_min} min`:""}</p>`:""}
+   <div class="artbody">${sanitizePorad(a.body_html||"")}</div>
+   ${linked.length?`<h2>Powiązane produkty</h2><div class="grid">${linked.map((p,i)=>cardHTML(p,i)).join("")}</div>`:""}`;
+}
+
+function listyPage(id){
+  if(!id){pageTitle="Gotowe listy";return `<nav class="bc"><a href="#/">Start</a><span>›</span><span>Gotowe listy</span></nav><h1 class="ph">Gotowe listy</h1><p class="sub">Prawdziwe produkty z naszego katalogu – jednym kliknięciem do subskrypcji.</p><div class="lists">${LISTDEF.map(L=>{const items=buildListItems(L.id),T=listTotals(items);return `<a class="listc" href="#/listy/${L.id}"><span class="e">${L.e}</span><h3>${L.n}</h3><p>${L.d}</p><small>${items.length} produktów · od ${zl(T.month)}/mies. w subskrypcji</small></a>`}).join("")}</div>`}
+  const L=LISTDEF.find(x=>x.id===id);
+  if(!L)return `<div class="empty2">Nie ma takiej listy. <a href="#/listy">Wróć</a></div>`;
+  const items=buildListItems(id),T=listTotals(items);pageTitle=L.n;
+  return `<nav class="bc"><a href="#/">Start</a><span>›</span><a href="#/listy">Gotowe listy</a><span>›</span><span>${L.n}</span></nav>
+   <h1 class="ph">${L.e} ${L.n}</h1><p class="sub">${L.d}</p>
+   <div class="calcard">${items.map(x=>`<div class="calrow"><div><b>${esc(x.p.n)}</b><small>${x.p.m} · ${FREQ[x.f]?FREQ[x.f][0]:"co miesiąc"} · ${zl(subP(x.p))}</small></div><span>${x.qty}×</span><a href="#/produkt/${x.p.id}">zobacz</a></div>`).join("")}
+   <div class="row tt" style="margin-top:10px"><span>W subskrypcji / mies.</span><span>${zl(T.month)}</span></div>
+   <div class="row sv"><span>Oszczędzasz vs zakup jednorazowy (nasze ceny)</span><span>−${zl(T.save)}</span></div>
+   <button class="btn btn-p" style="width:100%;margin-top:12px" data-listadd="${id}">Dodaj całą listę do subskrypcji</button></div>`;
+}
+function kalkPage(){
+  pageTitle="Kalkulator zużycia";
+  const items=calcPlan(),T=listTotals(items);
+  const nbtn=[1,2,3,4,5].map(n=>`<button type="button" data-calc="n" data-v="${n}" class="${calc.n===n?"on":""}">${n===5?"5+":n}</button>`).join("");
+  const xbtn=[["baby","👶 Maluch"],["cat","🐱 Kot"],["dog","🐶 Pies"]].map(([k,l])=>`<button type="button" data-calc="${k}" class="${calc[k]?"on":""}">${l}</button>`).join("");
+  return `<nav class="bc"><a href="#/">Start</a><span>›</span><span>Kalkulator zużycia</span></nav>
+   <h1 class="ph">Kalkulator zużycia</h1>
+   <p class="sub">Podaj, ile osób jest w domu i czy jest maluch albo zwierzak. Dobierzemy ilości i rytm dostaw z prawdziwych produktów. Potem i tak zmienisz to jednym kliknięciem przed paczką.</p>
+   <div class="calcard"><b>Ile osób mieszka w domu?</b><div class="calopts">${nbtn}</div>
+   <b>Ktoś jeszcze?</b><div class="calopts">${xbtn}</div></div>
+   <div class="calcard"><b>Propozycja na start</b>
+    ${items.map(x=>`<div class="calrow"><div><b>${esc(x.p.n)}</b><small>${x.p.m} · ${FREQ[x.f]?FREQ[x.f][0]:"co miesiąc"} · ${zl(subP(x.p))}/szt.</small></div><span>${x.qty}×</span><a href="#/produkt/${x.p.id}">zobacz</a></div>`).join("")||`<p class="sub">Brak dopasowanych produktów.</p>`}
+    <div class="row tt" style="margin-top:10px"><span>Szacunkowo / miesiąc w subskrypcji</span><span>${zl(T.month)}</span></div>
+    <div class="row sv"><span>Oszczędzasz vs nasze ceny jednorazowe</span><span>−${zl(T.save)}</span></div>
+    <button class="btn btn-p" style="width:100%;margin-top:12px" data-calcadd>Dodaj całą propozycję do subskrypcji</button>
+    <p class="cofine" style="text-align:left">To orientacyjny zapas, nie norma. Większe opakowania i eko produkty wrzucamy, gdy naprawdę są w nazwie albo gramaturze.</p>
+   </div>`;
+}
+
+/* ----- savings & referral ----- */
+function yearSavings(a){
+  if(!a||!a.items)return {prod:0,ship:0,total:0,month:0};
+  normAcct(a);
+  let monthProd=0,monthReg=0;
+  a.items.forEach(l=>{const p=byId(l.id);if(!p)return;const f=FREQ[l.f]?FREQ[l.f][1]:1;monthProd+=subP(p)*l.qty*f;monthReg+=p.p*l.qty*f});
+  const prod=(monthReg-monthProd)*12;
+  const ship=monthProd>=FREE?SHIP.paczkomat.p*12:0;
+  return {prod,ship,total:prod+ship,month:monthProd,monthReg};
+}
+function saveCardHTML(a){
+  const S=yearSavings(a);
+  if(!a)return `<div class="savecard"><small>Licznik oszczędności</small><b>0 zł / rok</b><small>Oszczędność liczona wyłącznie od naszych cen: subskrypcja −15% vs zakup jednorazowy u nas. Start w kalkulatorze albo z gotowej listy.</small></div>`;
+  return `<div class="savecard" id="saveCard"><small>Twoje oszczędności w rok (nasze ceny)</small><b>${zl(S.total)}</b>
+   <small>−15% na produktach: ${zl(S.prod)} · darmowa dostawa od ${FREE} zł: ${S.ship?zl(S.ship):"jeszcze nie w tym progu"}</small>
+   <small style="display:block;margin-top:6px">To nie jest porównanie z innymi sklepami – tylko nasza cena subskrypcyjna vs nasza cena jednorazowa.</small></div>`;
+}
+function refCode(){let c=store.get("refCode","");if(!c){c="DOMO-"+Math.random().toString(36).slice(2,6).toUpperCase()+Math.random().toString(36).slice(2,3).toUpperCase();store.set("refCode",c)}return c}
+function refLink(){const u=new URL(location.href);u.hash="#/polecenia";u.searchParams.set("ref",refCode());return u.toString()}
+function captureRef(){
+  try{
+    const q=new URLSearchParams(location.search).get("ref")||new URLSearchParams((location.hash.split("?")[1]||"")).get("kod")||new URLSearchParams((location.hash.split("?")[1]||"")).get("ref");
+    if(q&&/^DOMO-[A-Z0-9]{4,}$/i.test(q)&&q.toUpperCase()!==refCode())store.set("refFrom",q.toUpperCase());
+  }catch(e){}
+}
+function referralPage(){
+  pageTitle="Program poleceń";
+  const mine=refCode(),from=store.get("refFrom","");
+  return `<nav class="bc"><a href="#/">Start</a><span>›</span><span>Program poleceń</span></nav>
+   <h1 class="ph">Poleć znajomemu</h1>
+   <p class="sub">W wersji demo oboje dostajecie 10 zł na zakupy. Kod działa tylko w tej przeglądarce – nic nie jest wysyłane.</p>
+   <div class="refbox"><small>Twój kod</small><div class="refcode">${mine}</div>
+    <p class="sub" style="margin:8px 0">Link: <span id="refUrl">${esc(refLink())}</span></p>
+    <div class="inl"><button class="btn btn-p" data-refcopy>Kopiuj link</button> <button class="btn btn-o" data-refshare>Udostępnij</button></div>
+   </div>
+   ${from?`<p style="margin-top:14px">🎟️ Masz kod polecający <b>${esc(from)}</b>. Przy pierwszym zamówieniu w demo doliczymy 10 zł zniżki.</p>`:`<p class="sub" style="margin-top:14px">Jeśli ktoś poda Ci swój kod, wejdź z jego linku – zapamiętamy go w tej przeglądarce.</p>`}`;
+}
+function applyRefDiscount(T){
+  const from=store.get("refFrom","");
+  if(!from||store.get("refUsed",false))return T;
+  T.promo=(T.promo||0)+10;T.promoL=(T.promoL?T.promoL+" + ":"")+"polecenie 10 zł";T.code=T.code||from;T.total=Math.max(0,T.goods+T.shipCost-T.promo);T.refDemo=from;
+  return T;
+}
+
+/* ----- mapa paczkomatów (demo, OSM, bez wymyślonych ulic) ----- */
+const DEMO_PTS=[
+ {id:"DEMO-WAW",city:"Warszawa",label:"Punkt demo – centrum",lat:52.2297,lon:21.0122},
+ {id:"DEMO-KRK",city:"Kraków",label:"Punkt demo – Rynek Główny (okolice)",lat:50.0619,lon:19.9368},
+ {id:"DEMO-GDA",city:"Gdańsk",label:"Punkt demo – Główne Miasto",lat:54.3520,lon:18.6466},
+ {id:"DEMO-WRO",city:"Wrocław",label:"Punkt demo – Rynek",lat:51.1079,lon:17.0385},
+ {id:"DEMO-POZ",city:"Poznań",label:"Punkt demo – Stary Rynek",lat:52.4064,lon:16.9252},
+ {id:"DEMO-LOD",city:"Łódź",label:"Punkt demo – centrum",lat:51.7592,lon:19.4560},
+ {id:"DEMO-KTW",city:"Katowice",label:"Punkt demo – centrum",lat:50.2649,lon:19.0238},
+ {id:"DEMO-LUB",city:"Lublin",label:"Punkt demo – centrum",lat:51.2465,lon:22.5684},
+ {id:"DEMO-SZZ",city:"Szczecin",label:"Punkt demo – centrum",lat:53.4285,lon:14.5528},
+ {id:"DEMO-BIA",city:"Białystok",label:"Punkt demo – centrum",lat:53.1325,lon:23.1688}
+];
+function ptsLabel(id){const p=DEMO_PTS.find(x=>x.id===id);return p?`${p.city} · ${p.label}`:id}
+let leafletLoading=null,coMapInst=null;
+function loadLeaflet(){
+  if(window.L)return Promise.resolve(window.L);
+  if(leafletLoading)return leafletLoading;
+  leafletLoading=new Promise((res,rej)=>{
+    const css=document.createElement("link");css.rel="stylesheet";css.href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css";document.head.appendChild(css);
+    const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js";s.onload=()=>res(window.L);s.onerror=()=>rej(new Error("leaflet"));document.head.appendChild(s);
+  });
+  return leafletLoading;
+}
+function renderCoMap(){
+  const el=$("#coMap");if(!el)return;
+  loadLeaflet().then(L=>{
+    if(!$("#coMap"))return;
+    if(coMapInst){try{coMapInst.remove()}catch(e){}coMapInst=null}
+    const sel=DEMO_PTS.find(x=>x.id===ct.pt)||DEMO_PTS[0];
+    coMapInst=L.map("coMap",{scrollWheelZoom:false}).setView([sel.lat,sel.lon],6);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:"© OpenStreetMap"}).addTo(coMapInst);
+    DEMO_PTS.forEach(pt=>{
+      const m=L.marker([pt.lat,pt.lon]).addTo(coMapInst);
+      m.bindPopup(`<b>${pt.city}</b><br>${pt.label}<br><button type="button" class="btn btn-p btn-s" data-pt="${pt.id}">Wybierz</button>`);
+      m.on("click",()=>{ct.pt=pt.id;});
+    });
+    setTimeout(()=>{try{coMapInst.invalidateSize()}catch(e){}},200);
+  }).catch(()=>{el.innerHTML=`<p class="mapnote">Nie udało się wczytać mapy. Wybierz punkt z listy poniżej.</p>`});
+}
+
+function buildCatbar(){
+  const w=$("#catbarIn");if(!w||!catalogReady)return;
+  w.innerHTML=`<a href="#/produkty">☰ Wszystkie</a>`+Object.entries(CATN).map(([k,c])=>{
+    const subs=(SUBCATS[k]||[]).filter(([sk])=>sk==="inne"?P.some(p=>p.c===k&&p.sc==="inne"):true);
+    const n=P.filter(p=>p.c===k).length;
+    return `<div class="catdrop"><a href="#/kategoria/${k}">${c.e} ${c.n.replace(/^[^ ]+ /,"")}</a>
+     <div class="catmega">${subs.map(([sk,sn])=>`<a href="#/kategoria/${k}/${sk}"><span>${SUBICO[k+"/"+sk]||c.e} ${sn}</span><small>${P.filter(p=>p.c===k&&p.sc===sk).length}</small></a>`).join("")}
+     <a href="#/kategoria/${k}"><span>Wszystko w kategorii</span><small>${n}</small></a></div></div>`}).join("")+
+    `<a href="#/listy" class="hl">📋 Listy</a><a href="#/kalkulator">🧮 Kalkulator</a><a href="#/eko">🌱 Eko</a><span data-porad-nav ${POR.length?"":"hidden"}><a href="#/poradniki">📖 Poradniki</a></span><a href="#zestawy" class="hl">⭐ Zestawy</a>`;
+}
+
+function popularRow(){
+  const el=$("#lPop");if(!el)return;
+  if(!(R.kind==="cat"&&R.sc)){el.innerHTML="";el.hidden=true;return}
+  const L=P.filter(p=>p.c===R.cat&&p.sc===R.sc).sort((a,b)=>(hasPic(b)-hasPic(a))||pop(b)-pop(a)||a.p-b.p).slice(0,4);
+  if(L.length<3){el.innerHTML="";el.hidden=true;return}
+  const lab=SUBN[R.cat+"/"+R.sc]||R.sc;
+  el.hidden=false;
+  el.innerHTML=`<h3>Popularne w podkategorii „${lab}”</h3><div class="grid">${L.map((p,i)=>cardHTML(p,i,false)).join("")}</div>`;
+}
+
+let hurtQ="",hurtCat="",hurtPage=1,HURT_LP=40;
+function renderHurt(){const b=$("#hurtBody");if(!b||!catalogReady)return;
+  const WH=P.filter(p=>p.source_price_type!=="retail"&&p.gr!=null&&(p.offers||p.gr));
+  let sg=0,sr=0,ss=0,multi=0,unc=0;
+  WH.forEach(p=>{sg+=p.gr;sr+=p.p;ss+=subP(p);if((p.offers||[]).filter(o=>o.ok).length>1)multi++;if(p.source_price_type==="gross_unconfirmed")unc++});
+  let F=WH;
+  if(hurtCat)F=F.filter(p=>p.c===hurtCat);
+  if(hurtQ){const w=norm(hurtQ).split(/\s+/).filter(Boolean);F=F.filter(p=>w.every(x=>(p._q||searchText(p)).includes(x)))}
+  const pages=Math.max(1,Math.ceil(F.length/HURT_LP));if(hurtPage>pages)hurtPage=pages;if(hurtPage<1)hurtPage=1;
+  const slice=F.slice((hurtPage-1)*HURT_LP,hurtPage*HURT_LP);
+  const bar=$("#hurtBar");
+  if(bar)bar.innerHTML=`<div class="kpis"><div><b>${WH.length}</b><small>z ceną hurtową</small></div><div><b>${P.length-WH.length}</b><small>pominięte (detal / brak hurtu)</small></div><div><b>${zl(sr-sg)}</b><small>marża 1× cały hurt</small></div><div><b>${sg?Math.round((sr-sg)/sg*100):0}%</b><small>średni narzut</small></div><div><b>${unc}</b><small>brutto niepotwierdzone</small></div></div>
+    <div class="hurtbar"><input id="hurtQ" type="search" placeholder="Szukaj produktu lub EAN" value="${esc(hurtQ)}">
+    <select id="hurtCat"><option value="">Wszystkie kategorie</option>${Object.entries(CATN).map(([k,c])=>`<option value="${k}" ${hurtCat===k?"selected":""}>${c.n}</option>`).join("")}</select>
+    <span class="sub">${F.length} pozycji · strona ${hurtPage}/${pages}</span></div>`;
+  b.innerHTML=slice.map(p=>{const m=p.p-p.gr,sp=subP(p),ms=sp-p.gr;
+    const offs=(p.offers||[]).length?[...p.offers].sort((a,b)=>a.gr-b.gr).map(o=>`<span class="offer${o.ok?"":" na"}">${o.url?`<a href="${o.url}" target="_blank" rel="noopener">${o.src}</a>`:o.src}: ${o.net!=null?zl(o.net)+" netto / ":""}<b>${zl(o.gr)}</b> brutto${o.ok&&o.src===p.best?'<span class="best">najtaniej</span>':""}${o.note?` <small>(${o.note})</small>`:""}</span>`).join(""):`<span class="offer">${p.best||""}: <b>${zl(p.gr)}</b>${p.source_price_type==="gross_unconfirmed"?" <small>(brutto niepotwierdzone)</small>":""}</span>`;
+    return `<tr><td><b>${p.n}</b><br><small style="color:#64748b">${p.m} · EAN ${p.ean||"–"} · ${p.c}</small></td><td>${offs}</td><td class="r">${p.vat||"–"}</td><td class="r">${zl(p.gr)}</td><td class="r"><b>${zl(p.p)}</b></td><td class="r">${zl(m)}</td><td class="r">${p.gr?Math.round(m/p.gr*100):"–"}%</td><td class="r">${zl(sp)}</td><td class="r" style="color:${ms<0?"#dc2626":"inherit"}">${zl(ms)} (${p.gr?Math.round(ms/p.gr*100):"–"}%)</td></tr>`}).join("");
+  const foot=$("#hurtFoot");
+  if(foot)foot.innerHTML=`<tr><td colspan="3">Suma 1× każdy z ${WH.length} produktów hurtowych${P.length!==WH.length?` (pominięto ${P.length-WH.length}: doz.pl i pozycje bez ceny hurtowej)`:""}${multi?` · ${multi} porównane w 2+ źródłach`:""}</td><td class="r">${zl(sg)}</td><td class="r">${zl(sr)}</td><td class="r">${zl(sr-sg)}</td><td class="r">${sg?Math.round((sr-sg)/sg*100):0}%</td><td class="r">${zl(ss)}</td><td class="r">${zl(ss-sg)} (${sg?Math.round((ss-sg)/sg*100):0}%)</td></tr>`;
+  let pg=$("#hurtPager");if(!pg){pg=document.createElement("div");pg.id="hurtPager";pg.className="pager";const tw=b.closest(".tw")||b.parentElement;if(tw)tw.after(pg)}
+  if(pages<=1)pg.innerHTML="";else{
+    let btns="";const add=(p,lab,on,dis)=>btns+=`<button type="button" data-hpage="${p}" class="${on?"on":""}" ${dis?"disabled":""}>${lab}</button>`;
+    add(Math.max(1,hurtPage-1),"←",0,hurtPage===1);add(Math.min(pages,hurtPage+1),"→",0,hurtPage===pages);
+    pg.innerHTML=btns+`<span class="pginfo">${F.length} pozycji</span>`;
+  }
+}
+
+function extrasReady(){
+  captureRef();
+  loadPoradniki();
+  buildCatbar();
+  const hl=$("#homeLists");
+  if(hl)hl.innerHTML=LISTDEF.map(L=>`<a class="listc" href="#/listy/${L.id}"><span class="e">${L.e}</span><h3>${L.n}</h3><p>${L.d}</p></a>`).join("");
+}
+
+
+document.addEventListener("click",e=>{
+ const hp=e.target.closest("[data-hpage]");if(hp){hurtPage=+hp.dataset.hpage;renderHurt();return}
+ const mpt=e.target.closest("#coMap [data-pt], .leaflet-popup [data-pt]");if(mpt){ct.pt=mpt.dataset.pt;renderCo();return}
+});
+document.addEventListener("input",e=>{if(e.target&&e.target.id==="hurtQ"){hurtQ=e.target.value;hurtPage=1;renderHurt()}});
+document.addEventListener("change",e=>{if(e.target&&e.target.id==="hurtCat"){hurtCat=e.target.value;hurtPage=1;renderHurt()}});
+captureRef();
+
 const BOOT=[["favBadge",()=>favBadge()],["catalog",()=>loadCatalog()]];
+
 BOOT.forEach(([n,f])=>{try{f()}catch(e){window.__DM_ERR&&window.__DM_ERR(e,n)}});
 window.__DM_OK=true;document.documentElement.classList.add("dm-ok");
 })();
