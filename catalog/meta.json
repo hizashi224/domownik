@@ -1,218 +1,218 @@
 {
-  "v": 12,
-  "phase": 3,
-  "n": 3018,
-  "with_img": 2995,
-  "pool": 3018,
+  "v": 15,
+  "phase": 4,
+  "n": 5713,
+  "with_img": 5615,
+  "pool": 5713,
   "cats": [
     {
       "k": "papier",
-      "n": 223,
+      "n": 567,
       "subs": [
         {
           "k": "toaletowy",
           "n": "Papier toaletowy",
-          "c": 94
+          "c": 177
         },
         {
           "k": "reczniki",
           "n": "Ręczniki kuchenne",
-          "c": 69
+          "c": 167
         },
         {
           "k": "chusteczki",
           "n": "Chusteczki",
-          "c": 40
+          "c": 94
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 20
+          "c": 129
         }
       ]
     },
     {
       "k": "pranie",
-      "n": 212,
+      "n": 484,
       "subs": [
         {
           "k": "proszki",
           "n": "Proszki",
-          "c": 31
+          "c": 77
         },
         {
           "k": "zele",
           "n": "Żele",
-          "c": 32
+          "c": 46
         },
         {
           "k": "kapsulki",
           "n": "Kapsułki",
-          "c": 44
+          "c": 98
         },
         {
           "k": "plukanie",
           "n": "Płyny do płukania",
-          "c": 55
+          "c": 128
         },
         {
           "k": "odplamiacze",
           "n": "Odplamiacze",
-          "c": 49
+          "c": 72
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 1
+          "c": 63
         }
       ]
     },
     {
       "k": "kuchnia",
-      "n": 174,
+      "n": 421,
       "subs": [
         {
           "k": "plyny-naczynia",
           "n": "Płyny do naczyń",
-          "c": 73
+          "c": 181
         },
         {
           "k": "zmywarka",
           "n": "Tabletki i kapsułki do zmywarki",
-          "c": 76
+          "c": 95
         },
         {
           "k": "sol-nablyszczacz",
           "n": "Sól i nabłyszczacze",
-          "c": 25
+          "c": 80
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 0
+          "c": 65
         }
       ]
     },
     {
       "k": "sprzatanie",
-      "n": 356,
+      "n": 952,
       "subs": [
         {
           "k": "uniwersalne",
           "n": "Uniwersalne",
-          "c": 88
+          "c": 155
         },
         {
           "k": "lazienka-wc",
           "n": "Łazienka i WC",
-          "c": 87
+          "c": 165
         },
         {
           "k": "kuchnia",
           "n": "Kuchnia",
-          "c": 24
+          "c": 62
         },
         {
           "k": "szyby",
           "n": "Szyby",
-          "c": 33
+          "c": 73
         },
         {
           "k": "dezynfekcja",
           "n": "Dezynfekcja i wybielacze",
-          "c": 26
+          "c": 102
         },
         {
           "k": "odswiezacze",
           "n": "Odświeżacze",
-          "c": 21
+          "c": 204
         },
         {
           "k": "owady",
           "n": "Na owady",
-          "c": 30
+          "c": 31
         },
         {
           "k": "akcesoria",
           "n": "Akcesoria",
-          "c": 43
+          "c": 143
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 4
+          "c": 17
         }
       ]
     },
     {
       "k": "folie",
-      "n": 342,
+      "n": 769,
       "subs": [
         {
           "k": "worki",
           "n": "Worki na śmieci",
-          "c": 109
+          "c": 280
         },
         {
           "k": "folie",
           "n": "Folie i papier do pieczenia",
-          "c": 84
+          "c": 138
         },
         {
           "k": "zmywaki",
           "n": "Zmywaki i ściereczki",
-          "c": 82
+          "c": 168
         },
         {
           "k": "rekawice",
           "n": "Rękawice",
-          "c": 45
+          "c": 148
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 22
+          "c": 35
         }
       ]
     },
     {
       "k": "higiena",
-      "n": 620,
+      "n": 990,
       "subs": [
         {
           "k": "mydla-zele",
           "n": "Mydła i żele pod prysznic",
-          "c": 191
+          "c": 268
         },
         {
           "k": "szampony",
           "n": "Szampony i włosy",
-          "c": 47
+          "c": 94
         },
         {
           "k": "jama-ustna",
           "n": "Jama ustna",
-          "c": 102
+          "c": 118
         },
         {
           "k": "dezodoranty",
           "n": "Dezodoranty",
-          "c": 81
+          "c": 248
         },
         {
           "k": "pielegnacja",
           "n": "Pielęgnacja",
-          "c": 58
+          "c": 73
         },
         {
           "k": "golenie",
           "n": "Golenie",
-          "c": 73
+          "c": 102
         },
         {
           "k": "damska",
           "n": "Higiena damska",
-          "c": 68
+          "c": 87
         },
         {
           "k": "inne",
@@ -223,43 +223,43 @@
     },
     {
       "k": "dziecko",
-      "n": 136,
+      "n": 203,
       "subs": [
         {
           "k": "pieluszki",
           "n": "Pieluszki",
-          "c": 96
+          "c": 99
         },
         {
           "k": "chusteczki",
           "n": "Chusteczki dla dzieci",
-          "c": 23
+          "c": 50
         },
         {
           "k": "pielegnacja",
           "n": "Pielęgnacja",
-          "c": 17
+          "c": 31
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 0
+          "c": 23
         }
       ]
     },
     {
       "k": "zwierzaki",
-      "n": 206,
+      "n": 239,
       "subs": [
         {
           "k": "kot",
           "n": "Karma dla kota",
-          "c": 93
+          "c": 111
         },
         {
           "k": "pies",
           "n": "Karma dla psa",
-          "c": 62
+          "c": 77
         },
         {
           "k": "zwirek",
@@ -275,22 +275,22 @@
     },
     {
       "k": "kawa",
-      "n": 362,
+      "n": 499,
       "subs": [
         {
           "k": "ziarnista",
           "n": "Kawa ziarnista",
-          "c": 49
+          "c": 73
         },
         {
           "k": "mielona",
           "n": "Kawa mielona",
-          "c": 45
+          "c": 51
         },
         {
           "k": "rozpuszczalna",
           "n": "Kawa rozpuszczalna",
-          "c": 48
+          "c": 51
         },
         {
           "k": "kapsulki",
@@ -300,90 +300,102 @@
         {
           "k": "herbata-czarna",
           "n": "Herbata czarna",
-          "c": 105
+          "c": 138
         },
         {
           "k": "herbata-zielona",
           "n": "Herbata zielona",
-          "c": 24
+          "c": 48
         },
         {
           "k": "herbata-owocowa",
           "n": "Herbata owocowa i ziołowa",
-          "c": 60
+          "c": 84
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 15
+          "c": 38
         }
       ]
     },
     {
       "k": "przekaski",
-      "n": 190,
+      "n": 248,
       "subs": [
         {
           "k": "orzeszki-chipsy",
           "n": "Orzeszki i chipsy",
-          "c": 50
+          "c": 65
         },
         {
           "k": "slodycze",
           "n": "Słodycze",
-          "c": 75
+          "c": 100
         },
         {
           "k": "napoje",
           "n": "Napoje",
-          "c": 65
+          "c": 81
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 0
+          "c": 2
         }
       ]
     },
     {
       "k": "dom",
-      "n": 197,
+      "n": 341,
       "subs": [
         {
           "k": "baterie",
           "n": "Baterie",
-          "c": 140
+          "c": 262
         },
         {
           "k": "zarowki",
           "n": "Żarówki",
-          "c": 57
+          "c": 68
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 0
+          "c": 11
         }
       ]
     }
   ],
   "sources": {
-    "hurtownia-spozywcza.pl": 1453,
-    "merkurygdynia.pl": 245,
-    "pol-chem.com.pl": 129,
-    "hurtowniachemiczna.com": 188,
-    "miejczysto.pl": 163,
-    "b2b.papilart.pl": 9,
-    "amido.com.pl": 120,
-    "hurt.com.pl": 120,
-    "hurtchemiczny.com.pl": 218,
-    "niemirka.com": 153,
+    "hurtownia-spozywcza.pl": 1247,
+    "zakupychemiczne.pl": 1729,
+    "merkurygdynia.pl": 170,
+    "hurtchemiczny.com.pl": 328,
+    "okazja-hurtownia.pl": 90,
+    "officehit.pl": 216,
+    "pol-chem.com.pl": 81,
+    "gamma-opakowania.pl": 86,
+    "albertopakowania.pl": 135,
+    "hurtowniachemiczna.com": 194,
+    "miejczysto.pl": 193,
+    "metroo.pl": 20,
+    "b2b.papilart.pl": 10,
+    "amido.com.pl": 101,
+    "hurt.com.pl": 140,
+    "nawynos24.com": 201,
+    "niemirka.com": 203,
     "doz.pl": 90,
-    "polzoo.pl": 92,
-    "bd24.pl": 38
+    "polzoo.pl": 123,
+    "bd24.pl": 38,
+    "radpak.eu": 46,
+    "chemhurt.pl": 107,
+    "hurtowniawielobranzowa.pl": 109,
+    "chemiashop.pl": 45,
+    "epack.com.pl": 11
   },
   "price_types": {
-    "wholesale": 2890,
+    "wholesale": 5585,
     "retail": 90,
     "gross_unconfirmed": 38
   }

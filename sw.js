@@ -3,7 +3,7 @@
  * Product images and catalog/c/*.json are cached at runtime (scales to ~3000 products).
  * Bump CACHE when index.html or catalog structure changes.
  */
-const CACHE = "domownik-pwa-v14";
+const CACHE = "domownik-pwa-v15";
 const PRECACHE = [
   "./",
   "./index.html",
