@@ -1,152 +1,177 @@
 {
-  "v": 15,
+  "v": 16,
   "phase": 4,
   "n": 5713,
-  "with_img": 5615,
+  "with_img": 5322,
   "pool": 5713,
   "cats": [
     {
       "k": "papier",
-      "n": 567,
+      "n": 472,
       "subs": [
         {
           "k": "toaletowy",
           "n": "Papier toaletowy",
-          "c": 177
+          "c": 174
         },
         {
           "k": "reczniki",
-          "n": "Ręczniki kuchenne",
-          "c": 167
+          "n": "Ręczniki papierowe i czyściwo",
+          "c": 175
         },
         {
           "k": "chusteczki",
-          "n": "Chusteczki",
-          "c": 94
+          "n": "Chusteczki higieniczne",
+          "c": 66
+        },
+        {
+          "k": "serwetki",
+          "n": "Serwetki",
+          "c": 52
         },
         {
           "k": "inne",
-          "n": "Inne",
-          "c": 129
+          "n": "Prześcieradła i inne",
+          "c": 5
         }
       ]
     },
     {
       "k": "pranie",
-      "n": 484,
+      "n": 425,
       "subs": [
         {
           "k": "proszki",
-          "n": "Proszki",
-          "c": 77
+          "n": "Proszki do prania",
+          "c": 81
         },
         {
           "k": "zele",
-          "n": "Żele",
-          "c": 46
+          "n": "Żele i płyny do prania",
+          "c": 47
         },
         {
           "k": "kapsulki",
-          "n": "Kapsułki",
-          "c": 98
+          "n": "Kapsułki i tabletki",
+          "c": 67
         },
         {
           "k": "plukanie",
-          "n": "Płyny do płukania",
-          "c": 128
+          "n": "Płyny do płukania i perełki",
+          "c": 116
         },
         {
           "k": "odplamiacze",
-          "n": "Odplamiacze",
-          "c": 72
+          "n": "Odplamiacze i wybielacze",
+          "c": 73
+        },
+        {
+          "k": "pralka",
+          "n": "Czyszczenie pralki i odkamienianie",
+          "c": 9
+        },
+        {
+          "k": "akcesoria",
+          "n": "Klamerki, linki i akcesoria",
+          "c": 20
         },
         {
           "k": "inne",
-          "n": "Inne",
-          "c": 63
+          "n": "Krochmal i chusteczki do prania",
+          "c": 12
         }
       ]
     },
     {
       "k": "kuchnia",
-      "n": 421,
+      "n": 380,
       "subs": [
         {
           "k": "plyny-naczynia",
           "n": "Płyny do naczyń",
-          "c": 181
+          "c": 166
         },
         {
           "k": "zmywarka",
-          "n": "Tabletki i kapsułki do zmywarki",
-          "c": 95
+          "n": "Tabletki i proszki do zmywarki",
+          "c": 144
         },
         {
           "k": "sol-nablyszczacz",
-          "n": "Sól i nabłyszczacze",
-          "c": 80
+          "n": "Sól, nabłyszczacze i dodatki do zmywarki",
+          "c": 63
+        },
+        {
+          "k": "odkamieniacze",
+          "n": "Odkamieniacze do czajników i ekspresów",
+          "c": 7
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 65
+          "c": 0
         }
       ]
     },
     {
       "k": "sprzatanie",
-      "n": 952,
+      "n": 1033,
       "subs": [
         {
           "k": "uniwersalne",
-          "n": "Uniwersalne",
-          "c": 155
+          "n": "Uniwersalne i podłogi",
+          "c": 193
         },
         {
           "k": "lazienka-wc",
           "n": "Łazienka i WC",
-          "c": 165
+          "c": 163
         },
         {
           "k": "kuchnia",
-          "n": "Kuchnia",
-          "c": 62
+          "n": "Kuchnia, piekarnik i grill",
+          "c": 73
         },
         {
           "k": "szyby",
-          "n": "Szyby",
-          "c": 73
+          "n": "Szyby i lustra",
+          "c": 72
         },
         {
           "k": "dezynfekcja",
           "n": "Dezynfekcja i wybielacze",
-          "c": 102
+          "c": 91
+        },
+        {
+          "k": "dywany",
+          "n": "Dywany i tapicerka",
+          "c": 11
         },
         {
           "k": "odswiezacze",
-          "n": "Odświeżacze",
-          "c": 204
+          "n": "Odświeżacze powietrza",
+          "c": 226
         },
         {
           "k": "owady",
-          "n": "Na owady",
-          "c": 31
+          "n": "Owady i gryzonie",
+          "c": 30
         },
         {
           "k": "akcesoria",
-          "n": "Akcesoria",
-          "c": 143
+          "n": "Mopy, szczotki i akcesoria",
+          "c": 174
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 17
+          "c": 0
         }
       ]
     },
     {
       "k": "folie",
-      "n": 769,
+      "n": 900,
       "subs": [
         {
           "k": "worki",
@@ -156,12 +181,17 @@
         {
           "k": "folie",
           "n": "Folie i papier do pieczenia",
-          "c": 138
+          "c": 106
+        },
+        {
+          "k": "woreczki",
+          "n": "Woreczki i torebki",
+          "c": 45
         },
         {
           "k": "zmywaki",
-          "n": "Zmywaki i ściereczki",
-          "c": 168
+          "n": "Zmywaki, gąbki i ściereczki",
+          "c": 311
         },
         {
           "k": "rekawice",
@@ -169,50 +199,55 @@
           "c": 148
         },
         {
+          "k": "jednorazowe",
+          "n": "Naczynia i sztućce jednorazowe",
+          "c": 10
+        },
+        {
           "k": "inne",
           "n": "Inne",
-          "c": 35
+          "c": 0
         }
       ]
     },
     {
       "k": "higiena",
-      "n": 990,
+      "n": 1013,
       "subs": [
         {
           "k": "mydla-zele",
           "n": "Mydła i żele pod prysznic",
-          "c": 268
+          "c": 278
         },
         {
           "k": "szampony",
           "n": "Szampony i włosy",
-          "c": 94
+          "c": 97
         },
         {
           "k": "jama-ustna",
           "n": "Jama ustna",
-          "c": 118
+          "c": 123
         },
         {
           "k": "dezodoranty",
           "n": "Dezodoranty",
-          "c": 248
+          "c": 249
         },
         {
           "k": "pielegnacja",
-          "n": "Pielęgnacja",
-          "c": 73
+          "n": "Pielęgnacja ciała i rąk",
+          "c": 68
         },
         {
           "k": "golenie",
           "n": "Golenie",
-          "c": 102
+          "c": 107
         },
         {
           "k": "damska",
-          "n": "Higiena damska",
-          "c": 87
+          "n": "Higiena intymna",
+          "c": 91
         },
         {
           "k": "inne",
@@ -223,7 +258,7 @@
     },
     {
       "k": "dziecko",
-      "n": 203,
+      "n": 202,
       "subs": [
         {
           "k": "pieluszki",
@@ -233,37 +268,42 @@
         {
           "k": "chusteczki",
           "n": "Chusteczki dla dzieci",
-          "c": 50
+          "c": 54
         },
         {
           "k": "pielegnacja",
-          "n": "Pielęgnacja",
-          "c": 31
+          "n": "Kosmetyki i kąpiel",
+          "c": 36
+        },
+        {
+          "k": "zeby",
+          "n": "Pasty i szczoteczki dla dzieci",
+          "c": 13
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 23
+          "c": 0
         }
       ]
     },
     {
       "k": "zwierzaki",
-      "n": 239,
+      "n": 237,
       "subs": [
         {
           "k": "kot",
           "n": "Karma dla kota",
-          "c": 111
+          "c": 110
         },
         {
           "k": "pies",
           "n": "Karma dla psa",
-          "c": 77
+          "c": 76
         },
         {
           "k": "zwirek",
-          "n": "Żwirek i akcesoria",
+          "n": "Żwirek",
           "c": 51
         },
         {
@@ -275,37 +315,37 @@
     },
     {
       "k": "kawa",
-      "n": 499,
+      "n": 444,
       "subs": [
         {
           "k": "ziarnista",
           "n": "Kawa ziarnista",
-          "c": 73
+          "c": 72
         },
         {
           "k": "mielona",
           "n": "Kawa mielona",
-          "c": 51
+          "c": 49
         },
         {
           "k": "rozpuszczalna",
-          "n": "Kawa rozpuszczalna",
-          "c": 51
+          "n": "Kawa rozpuszczalna i cappuccino",
+          "c": 58
         },
         {
           "k": "kapsulki",
-          "n": "Kapsułki",
-          "c": 16
+          "n": "Kapsułki do kawy",
+          "c": 20
         },
         {
           "k": "herbata-czarna",
           "n": "Herbata czarna",
-          "c": 138
+          "c": 113
         },
         {
           "k": "herbata-zielona",
-          "n": "Herbata zielona",
-          "c": 48
+          "n": "Herbata zielona i matcha",
+          "c": 32
         },
         {
           "k": "herbata-owocowa",
@@ -313,56 +353,71 @@
           "c": 84
         },
         {
+          "k": "dodatki",
+          "n": "Cukier, kakao i śmietanka",
+          "c": 16
+        },
+        {
           "k": "inne",
           "n": "Inne",
-          "c": 38
+          "c": 0
         }
       ]
     },
     {
       "k": "przekaski",
-      "n": 248,
+      "n": 253,
       "subs": [
         {
           "k": "orzeszki-chipsy",
-          "n": "Orzeszki i chipsy",
-          "c": 65
+          "n": "Orzeszki, chipsy i krakersy",
+          "c": 63
         },
         {
           "k": "slodycze",
-          "n": "Słodycze",
-          "c": 100
+          "n": "Słodycze i ciastka",
+          "c": 95
         },
         {
           "k": "napoje",
-          "n": "Napoje",
-          "c": 81
+          "n": "Napoje i woda",
+          "c": 95
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 2
+          "c": 0
         }
       ]
     },
     {
       "k": "dom",
-      "n": 341,
+      "n": 354,
       "subs": [
         {
           "k": "baterie",
-          "n": "Baterie",
-          "c": 262
+          "n": "Baterie i akumulatorki",
+          "c": 258
         },
         {
           "k": "zarowki",
           "n": "Żarówki",
-          "c": 68
+          "c": 66
+        },
+        {
+          "k": "swiece",
+          "n": "Świece i podgrzewacze",
+          "c": 17
+        },
+        {
+          "k": "biuro",
+          "n": "Biuro i elektronika",
+          "c": 11
         },
         {
           "k": "inne",
           "n": "Inne",
-          "c": 11
+          "c": 2
         }
       ]
     }
