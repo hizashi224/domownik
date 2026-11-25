@@ -1,8 +1,8 @@
 {
-  "v": 16,
+  "v": 17,
   "phase": 4,
   "n": 5713,
-  "with_img": 5322,
+  "with_img": 5356,
   "pool": 5713,
   "cats": [
     {
@@ -12,7 +12,7 @@
         {
           "k": "toaletowy",
           "n": "Papier toaletowy",
-          "c": 174
+          "c": 173
         },
         {
           "k": "reczniki",
@@ -31,19 +31,19 @@
         },
         {
           "k": "inne",
-          "n": "Prześcieradła i inne",
-          "c": 5
+          "n": "Prześcieradła jednorazowe",
+          "c": 6
         }
       ]
     },
     {
       "k": "pranie",
-      "n": 425,
+      "n": 418,
       "subs": [
         {
           "k": "proszki",
           "n": "Proszki do prania",
-          "c": 81
+          "c": 73
         },
         {
           "k": "zele",
@@ -63,7 +63,7 @@
         {
           "k": "odplamiacze",
           "n": "Odplamiacze i wybielacze",
-          "c": 73
+          "c": 74
         },
         {
           "k": "pralka",
@@ -84,27 +84,27 @@
     },
     {
       "k": "kuchnia",
-      "n": 380,
+      "n": 391,
       "subs": [
         {
           "k": "plyny-naczynia",
           "n": "Płyny do naczyń",
-          "c": 166
+          "c": 170
         },
         {
           "k": "zmywarka",
           "n": "Tabletki i proszki do zmywarki",
-          "c": 144
+          "c": 123
         },
         {
           "k": "sol-nablyszczacz",
           "n": "Sól, nabłyszczacze i dodatki do zmywarki",
-          "c": 63
+          "c": 88
         },
         {
           "k": "odkamieniacze",
           "n": "Odkamieniacze do czajników i ekspresów",
-          "c": 7
+          "c": 10
         },
         {
           "k": "inne",
@@ -120,17 +120,17 @@
         {
           "k": "uniwersalne",
           "n": "Uniwersalne i podłogi",
-          "c": 193
+          "c": 199
         },
         {
           "k": "lazienka-wc",
           "n": "Łazienka i WC",
-          "c": 163
+          "c": 174
         },
         {
           "k": "kuchnia",
           "n": "Kuchnia, piekarnik i grill",
-          "c": 73
+          "c": 70
         },
         {
           "k": "szyby",
@@ -140,7 +140,7 @@
         {
           "k": "dezynfekcja",
           "n": "Dezynfekcja i wybielacze",
-          "c": 91
+          "c": 77
         },
         {
           "k": "dywany",
@@ -150,17 +150,17 @@
         {
           "k": "odswiezacze",
           "n": "Odświeżacze powietrza",
-          "c": 226
+          "c": 223
         },
         {
           "k": "owady",
           "n": "Owady i gryzonie",
-          "c": 30
+          "c": 35
         },
         {
           "k": "akcesoria",
           "n": "Mopy, szczotki i akcesoria",
-          "c": 174
+          "c": 172
         },
         {
           "k": "inne",
@@ -171,7 +171,7 @@
     },
     {
       "k": "folie",
-      "n": 900,
+      "n": 892,
       "subs": [
         {
           "k": "worki",
@@ -181,17 +181,17 @@
         {
           "k": "folie",
           "n": "Folie i papier do pieczenia",
-          "c": 106
+          "c": 103
         },
         {
           "k": "woreczki",
           "n": "Woreczki i torebki",
-          "c": 45
+          "c": 47
         },
         {
           "k": "zmywaki",
           "n": "Zmywaki, gąbki i ściereczki",
-          "c": 311
+          "c": 304
         },
         {
           "k": "rekawice",
@@ -212,12 +212,12 @@
     },
     {
       "k": "higiena",
-      "n": 1013,
+      "n": 1016,
       "subs": [
         {
           "k": "mydla-zele",
           "n": "Mydła i żele pod prysznic",
-          "c": 278
+          "c": 277
         },
         {
           "k": "szampony",
@@ -227,17 +227,17 @@
         {
           "k": "jama-ustna",
           "n": "Jama ustna",
-          "c": 123
+          "c": 120
         },
         {
           "k": "dezodoranty",
           "n": "Dezodoranty",
-          "c": 249
+          "c": 248
         },
         {
           "k": "pielegnacja",
           "n": "Pielęgnacja ciała i rąk",
-          "c": 68
+          "c": 76
         },
         {
           "k": "golenie",
@@ -258,17 +258,17 @@
     },
     {
       "k": "dziecko",
-      "n": 202,
+      "n": 205,
       "subs": [
         {
           "k": "pieluszki",
           "n": "Pieluszki",
-          "c": 99
+          "c": 88
         },
         {
           "k": "chusteczki",
           "n": "Chusteczki dla dzieci",
-          "c": 54
+          "c": 65
         },
         {
           "k": "pielegnacja",
@@ -278,7 +278,7 @@
         {
           "k": "zeby",
           "n": "Pasty i szczoteczki dla dzieci",
-          "c": 13
+          "c": 16
         },
         {
           "k": "inne",
@@ -392,7 +392,7 @@
     },
     {
       "k": "dom",
-      "n": 354,
+      "n": 352,
       "subs": [
         {
           "k": "baterie",
@@ -417,7 +417,7 @@
         {
           "k": "inne",
           "n": "Inne",
-          "c": 2
+          "c": 0
         }
       ]
     }
