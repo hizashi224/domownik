@@ -1,9 +1,9 @@
 {
-  "v": 17,
+  "v": 18,
   "phase": 4,
-  "n": 5713,
-  "with_img": 5356,
-  "pool": 5713,
+  "n": 5676,
+  "with_img": 5323,
+  "pool": 5676,
   "cats": [
     {
       "k": "papier",
@@ -38,12 +38,12 @@
     },
     {
       "k": "pranie",
-      "n": 418,
+      "n": 415,
       "subs": [
         {
           "k": "proszki",
           "n": "Proszki do prania",
-          "c": 73
+          "c": 72
         },
         {
           "k": "zele",
@@ -58,12 +58,12 @@
         {
           "k": "plukanie",
           "n": "Płyny do płukania i perełki",
-          "c": 116
+          "c": 115
         },
         {
           "k": "odplamiacze",
           "n": "Odplamiacze i wybielacze",
-          "c": 74
+          "c": 73
         },
         {
           "k": "pralka",
@@ -84,12 +84,12 @@
     },
     {
       "k": "kuchnia",
-      "n": 391,
+      "n": 371,
       "subs": [
         {
           "k": "plyny-naczynia",
           "n": "Płyny do naczyń",
-          "c": 170
+          "c": 154
         },
         {
           "k": "zmywarka",
@@ -99,7 +99,7 @@
         {
           "k": "sol-nablyszczacz",
           "n": "Sól, nabłyszczacze i dodatki do zmywarki",
-          "c": 88
+          "c": 84
         },
         {
           "k": "odkamieniacze",
@@ -115,12 +115,12 @@
     },
     {
       "k": "sprzatanie",
-      "n": 1033,
+      "n": 1027,
       "subs": [
         {
           "k": "uniwersalne",
           "n": "Uniwersalne i podłogi",
-          "c": 199
+          "c": 197
         },
         {
           "k": "lazienka-wc",
@@ -130,12 +130,12 @@
         {
           "k": "kuchnia",
           "n": "Kuchnia, piekarnik i grill",
-          "c": 70
+          "c": 68
         },
         {
           "k": "szyby",
           "n": "Szyby i lustra",
-          "c": 72
+          "c": 70
         },
         {
           "k": "dezynfekcja",
@@ -171,7 +171,7 @@
     },
     {
       "k": "folie",
-      "n": 892,
+      "n": 888,
       "subs": [
         {
           "k": "worki",
@@ -186,12 +186,12 @@
         {
           "k": "woreczki",
           "n": "Woreczki i torebki",
-          "c": 47
+          "c": 45
         },
         {
           "k": "zmywaki",
           "n": "Zmywaki, gąbki i ściereczki",
-          "c": 304
+          "c": 302
         },
         {
           "k": "rekawice",
@@ -212,12 +212,12 @@
     },
     {
       "k": "higiena",
-      "n": 1016,
+      "n": 1015,
       "subs": [
         {
           "k": "mydla-zele",
           "n": "Mydła i żele pod prysznic",
-          "c": 277
+          "c": 276
         },
         {
           "k": "szampony",
@@ -315,17 +315,17 @@
     },
     {
       "k": "kawa",
-      "n": 444,
+      "n": 441,
       "subs": [
         {
           "k": "ziarnista",
           "n": "Kawa ziarnista",
-          "c": 72
+          "c": 71
         },
         {
           "k": "mielona",
           "n": "Kawa mielona",
-          "c": 49
+          "c": 47
         },
         {
           "k": "rozpuszczalna",
@@ -423,9 +423,9 @@
     }
   ],
   "sources": {
-    "hurtownia-spozywcza.pl": 1247,
+    "hurtownia-spozywcza.pl": 1232,
     "zakupychemiczne.pl": 1729,
-    "merkurygdynia.pl": 170,
+    "merkurygdynia.pl": 169,
     "hurtchemiczny.com.pl": 328,
     "okazja-hurtownia.pl": 90,
     "officehit.pl": 216,
@@ -433,25 +433,25 @@
     "gamma-opakowania.pl": 86,
     "albertopakowania.pl": 135,
     "hurtowniachemiczna.com": 194,
-    "miejczysto.pl": 193,
+    "miejczysto.pl": 190,
     "metroo.pl": 20,
     "b2b.papilart.pl": 10,
     "amido.com.pl": 101,
     "hurt.com.pl": 140,
-    "nawynos24.com": 201,
+    "nawynos24.com": 195,
     "niemirka.com": 203,
     "doz.pl": 90,
     "polzoo.pl": 123,
-    "bd24.pl": 38,
-    "radpak.eu": 46,
+    "bd24.pl": 37,
+    "radpak.eu": 43,
     "chemhurt.pl": 107,
-    "hurtowniawielobranzowa.pl": 109,
-    "chemiashop.pl": 45,
+    "hurtowniawielobranzowa.pl": 108,
+    "chemiashop.pl": 38,
     "epack.com.pl": 11
   },
   "price_types": {
-    "wholesale": 5585,
+    "wholesale": 5549,
     "retail": 90,
-    "gross_unconfirmed": 38
+    "gross_unconfirmed": 37
   }
 }

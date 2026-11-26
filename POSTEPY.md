@@ -1,13 +1,13 @@
-# Domownik – postępy (stan na 25.11.2026, 20:35 Warszawa)
+# Domownik – postępy (stan na 26.11.2026, 07:47 Warszawa)
 
 ## Online
-- **Sklep (główny): https://hizashi224.github.io/domownik/** – **v17** (5713 produktów, 5356 ze zdjęciem, 357 z pustym oknem, cache `domownik-pwa-v17`). Wypchnięte 25.11 ok. 20:40 czasu Europe/Warsaw przez Michała.
+- **Sklep (główny): https://hizashi224.github.io/domownik/** – **v18** (5676 produktów, 5323 ze zdjęciem, 353 z pustym oknem, cache `domownik-pwa-v18`). Wypchnięte 26.11 rano (Europe/Warsaw) przez Michała.
 - Stara kopia na beacon (annual-parrot-76) wygasła 18.11 – nieaktualna.
 - APK Android v1.2 (cache v14) – aplikacje wstrzymane, APK nie ruszany od 17.11.
 
-## Wersja (v17 – 5713 produktów)
-- **5713 produktów**, 11 kategorii z podkategoriami, **5356 ze zdjęciem** (357 puste okno – brak pewnego zdjęcia), cache sw.js: **domownik-pwa-v17**. Źródło prawdy: catalog_internal.json (format bez zmian, pod przyszły CSV Shopify).
-- Per kategoria: sprzatanie 1033, higiena 1016, folie 892, papier 472, kawa 444, pranie 418, kuchnia 391, dom 352, przekaski 253, zwierzaki 237, dziecko 205.
+## Wersja (v18 – 5676 produktów)
+- **5676 produktów**, 11 kategorii z podkategoriami, **5323 ze zdjęciem** (353 puste okno – brak pewnego zdjęcia), cache sw.js: **domownik-pwa-v18**. Źródło prawdy: catalog_internal.json (format bez zmian, pod przyszły CSV Shopify).
+- Per kategoria: sprzatanie 1027, higiena 1015, folie 888, papier 472, kawa 441, pranie 415, kuchnia 371, dom 352, przekaski 253, zwierzaki 237, dziecko 205.
 - Funkcje bez zmian: kalkulator zużycia, gotowe listy, licznik oszczędności, program poleceń (demo), eko-tryb (teraz 752), mapa punktów odbioru (demo), 8 poradników od Sebastiana, panel właściciela z marżami, mega-menu, breadcrumbs, "Popularne", Wyczyść koszyk, pasek DEMO, stopka Gracjan & Sebastian
 - **Reset koszyka (17.11 17:36):** w szufladzie koszyka przycisk „Wyczyść koszyk” (ukryty, gdy koszyk pusty). Potwierdzenie we własnym oknie, potem toast „Koszyk wyczyszczony” z „Cofnij” przez 5 s. Czyści pozycje jednorazowe i subskrypcyjne w koszyku oraz `localStorage` (`domownik_cart`) i licznik w nagłówku. **Nie kasuje aktywnej subskrypcji w koncie** (`domownik_acct`).
 - Pasek DEMO i stopka "Gracjan & Sebastian"
@@ -53,6 +53,7 @@ Notatki na przyszłość, gdy wrócimy do aplikacji:
   - Aplikacji nie przebudowywano (wstrzymane). GitHub Pages v15 wypchnięte 18.11 (decyzja Gracjana).
   - 25.11 20:00 v16 / cache `domownik-pwa-v16` (Michał, na prośbę Gracjana z 25.11): naprawa zdjęć i kategorii. Przyczyna złych zdjęć: przy ponownych przebiegach ingestu `download_one()` pomijało pobieranie, gdy plik `img/p<id>.webp` już istniał, więc nowe produkty o tym samym id dziedziczyły zdjęcia innych produktów (id 3021–4175). Zdjęcia: 972 podmienione na zdjęcie z karty tego produktu u dostawcy, 4321 zweryfikowane OK, 29 dodanych, 322 usunięte (puste okno — brak pewnego zdjęcia, zdjęcie wspólne dla innego wariantu albo zły produkt), razem 5322 ze zdjęciem / 391 bez. Puste okno jest naprawdę puste (bez rysunku butelki). Kategorie: 684 produkty przeniesione (383 między kategoriami), 13 nowych podkategorii (serwetki, woreczki, naczynia jednorazowe, dywany i tapicerka, czyszczenie pralki, klamerki i linki, odkamieniacze do ekspresów, pasty i szczoteczki dla dzieci, cukier/kakao/śmietanka, świece, biuro i elektronika), jaśniejsze nazwy podkategorii, „Inne” prawie puste. Ceny i flagi bez zmian. Szczegóły: fix/LOG.md, fix/v16b/.
   - 25.11 20:35 v17 / cache `domownik-pwa-v17` (Michał, prośba Gracjana „Ma być idealnie”): 34 nowe pewne zdjęcia (31 z karty produktu u dostawcy, 3 z Open Food Facts po EAN, każde sprawdzone OCR + wzrokowo), 1 zdjęcie przeniesione na właściwy rozmiar (Medosept 500 ml), 357 pustych okien; 5115 nazw uporządkowanych (Marka + produkt + wariant + rozmiar, bez KRZYKU, kodów kartonów i powtórzonych końcówek), 1170 poprawionych marek, ujednolicone opakowania (4549), 90 przeniesień kategorii, „Prześcieradła jednorazowe” zamiast „Prześcieradła i inne”, przeliczanie ceny za jednostkę rozumie wielopaki „4 x 85 g”. Ceny i flagi bez zmian. Szczegóły: fix/LOG.md, fix/v17/.
+  - 26.11 07:47 v18 / cache `domownik-pwa-v18` (Michał, decyzja Gracjana: „Scal duplikaty i zostaw tańszą wersję”; wspólne zdjęcia dla rozmiarów zostają): 30 grup duplikatów scalonych (ten sam produkt, wariant i rozmiar od różnych dostawców), 37 produktów usuniętych, zostaje tańsza wersja; zdjęcie/EAN/lepsza nazwa przeniesione z duplikatu, gdy tańszej brakowało. Katalog 5713 → 5676. Stare id w koszyku/subskrypcji/ulubionych przechodzą automatycznie na zachowany produkt. Szczegóły: fix/LOG.md, fix/v18/.
 
 ## ZASADA ZESPOŁU (Gracjan, 17.11.2026)
 Wszystko zapisujemy tutaj, żeby boty (Michał, Sebastian, Szef sztabu) same się ogarniały.
