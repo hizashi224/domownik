@@ -3,7 +3,7 @@
  * Product images and catalog/c/*.json are cached at runtime (scales to ~3000 products).
  * Bump CACHE when index.html or catalog structure changes.
  */
-const CACHE = "domownik-pwa-v18";
+const CACHE = "domownik-pwa-v19";
 const PRECACHE = [
   "./",
   "./index.html",
@@ -12,6 +12,7 @@ const PRECACHE = [
   "./catalog.json",
   "./catalog/meta.json",
   "./catalog/search.json",
+  "./promo.json",
   "./manifest.webmanifest",
   "./sw.js",
   "./icons/icon-180.png",
@@ -43,6 +44,21 @@ self.addEventListener("fetch", (event) => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  if (url.pathname.endsWith("/promo.json")) {
+    // Black Week: dane promocji zawsze z sieci (offline - z cache)
+    event.respondWith((async () => {
+      try {
+        const res = await fetch(req, { cache: "no-cache" });
+        if (res && res.ok) { const c = await caches.open(CACHE); await c.put(req, res.clone()); }
+        return res;
+      } catch (err) {
+        const hit = await caches.match(req, { ignoreSearch: true });
+        if (hit) return hit;
+        throw err;
+      }
+    })());
+    return;
+  }
   event.respondWith((async () => {
     const cached = await caches.match(req, { ignoreSearch: true });
     if (cached) return cached;

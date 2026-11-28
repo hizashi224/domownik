@@ -740,9 +740,42 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
 @media (max-width:959px){.catmega,.catdrop:hover .catmega{display:none!important}}
 
 </style>
+<style id="bwcss">
+#bwBar{background:#0b1220;color:#fff;border-bottom:2px solid #f5c542}
+#bwBar[hidden],#bwHome[hidden]{display:none}
+#bwBar a{display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px;color:#fff;text-decoration:none;font-size:13px;line-height:1.3;text-align:center}
+#bwBar .bwb-t b{color:#f5c542;letter-spacing:.08em;font-weight:900}
+#bwBar .bwb-t em{font-style:normal;font-weight:600;opacity:.92}
+#bwBar .bwb-c{font-variant-numeric:tabular-nums;font-weight:800;background:#1e293b;border:1px solid #334155;border-radius:8px;padding:3px 9px;white-space:nowrap}
+#bwBar .bwb-c small{font-weight:600;opacity:.75;margin-right:4px}
+#bwHome{padding-top:10px}
+.bwbox{background:linear-gradient(160deg,#0b1220,#16213a);border-radius:22px;padding:18px 14px 12px;color:#fff;box-shadow:0 12px 30px rgba(11,18,32,.28)}
+.bwbox h2{color:#fff;margin:2px 0 0}
+.bwbox .sub{color:#cbd5e1;margin:4px 0 0}
+.bwbox .shd>a{color:#f5c542;font-weight:800}
+.bwk{display:inline-block;background:#f5c542;color:#0b1220;font-weight:900;font-size:11px;letter-spacing:.1em;padding:3px 8px;border-radius:6px}
+.bwbox .cdl{display:inline-block;margin-top:6px;font-variant-numeric:tabular-nums;font-weight:800;color:#f5c542}
+.bwnote{font-size:12px;color:#94a3b8;margin:2px 4px 6px;line-height:1.45}
+.bdg i.bw{background:#0b1220;color:#f5c542;border:1px solid #f5c542}
+.pd .big .bdg i.bw{font-size:13px}
+.omni{font-size:11px;color:var(--mut);line-height:1.35;margin:3px 0 0}
+.pc .omni{min-height:0}
+.pbox .omni{font-size:12.5px;margin:6px 0 0}
+.pbox .pr .tag2.bw{background:#0b1220;color:#f5c542}
+.bwnotep{font-size:12.5px;color:#475569;margin:6px 0 0;line-height:1.45}
+.bwt{font-style:normal;font-weight:800;font-size:11px;background:#0b1220;color:#f5c542;border-radius:6px;padding:2px 6px;margin-left:4px;white-space:nowrap}
+.bwbox .pc{color:var(--ink)}
+.bwbox .shd{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.bwbox .shd h2{font-size:26px}
+.pc .disc.bwd{display:none}
+.toast{opacity:0;visibility:hidden;transition:transform .35s cubic-bezier(.2,.9,.3,1),opacity .25s,visibility .35s}.toast.on{opacity:1;visibility:visible}
+#bwHome{padding-top:12px}
+@media (max-width:420px){#bwBar a{font-size:12.5px}.bwbox{border-radius:18px;padding:16px 10px 10px}}
+</style>
 </head>
 <body>
 <div id="catLoad" hidden>Wczytuję asortyment…</div>
+<div id="bwBar" hidden role="region" aria-label="Black Week"><a href="#/black-week"><span class="bwb-t"><b>BLACK WEEK</b> <em>−15% i więcej na wybrane hity</em></span><span class="bwb-c"><small>Koniec za</small><span id="bwCd">…</span></span></a></div>
 <div id="topStick">
 <div id="demoBar" role="status">WERSJA DEMO – to przykładowa strona. Zamówienia i płatności nie są realizowane.</div>
 <div id="jsFail" role="alert"><b>⚠️ Ta strona potrzebuje JavaScriptu.</b> Otwórz plik w Safari lub Chrome (podgląd w Gmailu/Plikach nie uruchamia skryptów).</div>
@@ -776,6 +809,13 @@ body:has(.itoast.on) .chatb{opacity:0;pointer-events:none}
 
 <main>
 <div id="pgHome" class="page">
+<section id="bwHome" hidden>
+  <div class="wrap"><div class="bwbox">
+    <div class="shd"><div><span class="bwk">BLACK WEEK</span><h2>Black Week −15%</h2><p class="sub">Wybrane popularne produkty taniej – promocja do <span id="bwEnd">1 grudnia, 23:59</span>.</p><span class="cdl" id="bwCd2"></span></div><a href="#/black-week" id="bwAll">Zobacz wszystkie →</a></div>
+    <div class="hrow" id="bwRow"></div>
+    <p class="bwnote">Cena subskrypcji (−15%) nie łączy się z promocją Black Week – naliczamy korzystniejszą z cen. Przy każdej obniżce podajemy najniższą cenę z 30 dni przed obniżką.</p>
+  </div></div>
+</section>
 <section class="hero">
   <div class="wrap">
     <div class="hero-box">
@@ -1139,7 +1179,7 @@ window.art=art;
 const $=s=>document.querySelector(s);
 const zl=n=>(Math.round(n*100)/100).toFixed(2).replace(".",",").replace(/\B(?=(\d{3})+(?!\d))/g," ")+" zł";
 const byId=id=>PbyId.get(+id);
-const subP=p=>!p?0:Math.round((p.old||p.p)*(1-DISC)*100)/100;
+const subP=p=>{if(!p)return 0;const s=Math.round((p.old||p.p)*(1-DISC)*100)/100;return p.bw?Math.min(s,p.p):s}; /* v19: przy Black Week klient dostaje korzystniejszą z cen, rabaty się nie sumują */
 function applyPromos(){[[6,10],[19,10],[32,15],[48,10]].forEach(([id,x])=>{const p=byId(id);if(p&&p.old==null){p.old=p.p;p.p=Math.round(p.p*(1-x/100))-0.01}})}
 function searchText(p){const sl=(SUBCATS[p.c]||[]).find(x=>x[0]===p.sc);return norm([p.n,p.m,p.b||"",brand(p),(CATN[p.c]||{}).n||"",sl?sl[1]:"",p.sc||""].join(" "));}
 
@@ -1231,10 +1271,10 @@ const similar=p=>P.filter(x=>x.c===p.c&&x.id!==p.id).sort((a,b)=>pop(b)-pop(a)).
 const SHORT=p=>p.n.split(" – ")[0];
 function cardHTML(p,i,anim){const m=gMode,l=line(p.id,m),sub=m==="sub";
  return `<article class="pc${sub?" sub-on":""}" data-id="${p.id}" style="${anim?`animation-delay:${Math.min(i,12)*30}ms`:"animation:none"}">
-  <div class="iw"><a class="pl" href="#/produkt/${p.id}" tabindex="-1"><div class="img${hasPic(p)?" ph":""}" style="background:${hasPic(p)?"#fff":p.col}">${pic(p)}<span class="disc">-15%</span>${badgeHTML(p)}</div></a><button class="fav${isFav(p.id)?" on":""}" data-act="fav" aria-label="Dodaj do ulubionych">${isFav(p.id)?"♥":"♡"}</button></div>
+  <div class="iw"><a class="pl" href="#/produkt/${p.id}" tabindex="-1"><div class="img${hasPic(p)?" ph":""}" style="background:${hasPic(p)?"#fff":p.col}">${pic(p)}<span class="disc${p.bw?" bwd":""}">-15%</span>${badgeHTML(p)}</div></a><button class="fav${isFav(p.id)?" on":""}" data-act="fav" aria-label="Dodaj do ulubionych">${isFav(p.id)?"♥":"♡"}</button></div>
   <a class="pl" href="#/produkt/${p.id}"><div class="br">${brand(p)}</div><h4>${p.n}</h4>${starsLine(p)}</a><div class="meta">${p.m}</div>
-  <div class="price">${sub?`<b>${zl(subP(p))}</b><s>${zl(p.old||p.p)}</s>`:`<b>${zl(p.p)}</b>${p.old?`<s>${zl(p.old)}</s>`:""}`}</div>
-   ${sub&&((p.old||p.p)-subP(p))>0.004?`<div class="save">oszczędzasz ${zl((p.old||p.p)-subP(p))} vs jednorazowo</div>`:""}
+  <div class="price">${sub?`<b>${zl(subP(p))}</b><s>${zl(p.old||p.p)}</s>`:`<b>${zl(p.p)}</b>${p.old?`<s>${zl(p.old)}</s>`:""}`}</div>${omniHTML(p)}
+   ${sub&&((p.old||p.p)-subP(p))>0.004?`<div class="save">oszczędzasz ${zl((p.old||p.p)-subP(p))} ${p.bw?"dzięki Black Week":"vs jednorazowo"}</div>`:""}
   <div class="once">${sub?`co miesiąc · jednorazowo ${zl(p.p)}`:"jednorazowo"}${upTxt(p,sub?subP(p):p.p)?`<br>${upTxt(p,sub?subP(p):p.p)}`:""}</div>
   ${l?`<div class="stp"><button data-act="dec" aria-label="Mniej">−</button><span>${l.qty} szt.</span><button data-act="inc" aria-label="Więcej">+</button></div>`
      :`<button class="add${sub?" sub":""}" data-act="add">${sub?"+ do subskrypcji":"+ do koszyka"}</button>`}</article>`}
@@ -1247,12 +1287,13 @@ document.addEventListener("click",e=>{const a=e.target.closest(".pc [data-act]")
   case "dec":{const l=line(id,m);setQty(id,m,l.qty-1);break}
  }});
 /* routing */
-let R={pg:"home"},lsort="pop",lbrand="",lmin="",lmax="",lsubonly=false,leko=false,pq=1,pf="1m",homeY=0,lpage=1,LP=24,lkey="";
+let R={pg:"home"},lsort="pop",lbrand="",lmin="",lmax="",lsubonly=false,leko=false,lbw=false,pq=1,pf="1m",homeY=0,lpage=1,LP=24,lkey="";
 function go(h){if(location.hash===h)route();else location.hash=h}
 function plN(n){return `${n} ${plural(n)}`}
 function listItems(){
  if(R.kind==="q"){const w=norm(R.q).split(/\s+/).filter(Boolean);return P.filter(p=>w.every(x=>(p._q||searchText(p)).includes(x)))}
  if(R.kind==="eko"){return P.filter(isEcoOrLarge)}
+ if(R.kind==="bw"){return P.filter(p=>p.bw)}
  if(R.kind==="cat"){let L=P.filter(p=>p.c===R.cat);if(R.sc)L=L.filter(p=>p.sc===R.sc);return L}
  return P.slice()}
 function priceOf(p){return gMode==="sub"?subP(p):p.p}
@@ -1265,6 +1306,7 @@ function renderList(anim){
   if(lbrand&&brand(p)!==lbrand)return false;
   if(lsubonly&&p.sub===0)return false;
   if(leko&&!isEcoOrLarge(p))return false;
+  if(lbw&&!p.bw)return false;
   const pr=priceOf(p);
   if(pmin!=null&&!Number.isNaN(pmin)&&pr<pmin)return false;
   if(pmax!=null&&!Number.isNaN(pmax)&&pr>pmax)return false;
@@ -1274,12 +1316,13 @@ function renderList(anim){
  L.sort(S[lsort]||S.pop);
  const catLab=R.kind==="cat"&&CATN[R.cat]?CATN[R.cat]:null;
  const subLab=R.kind==="cat"&&R.sc?SUBN[R.cat+"/"+R.sc]:"";
- const title=R.kind==="cat"?(catLab?(catLab.e+" "+catLab.n+(subLab?" – "+subLab:"")):"Kategoria"):R.kind==="q"?`Wyniki dla „${R.q.replace(/[<>&"]/g,"")}”`:R.kind==="eko"?"🌱 Eko i duże opakowania":"Wszystkie produkty";
+ const title=R.kind==="cat"?(catLab?(catLab.e+" "+catLab.n+(subLab?" – "+subLab:"")):"Kategoria"):R.kind==="q"?`Wyniki dla „${R.q.replace(/[<>&"]/g,"")}”`:R.kind==="eko"?"🌱 Eko i duże opakowania":R.kind==="bw"?"🖤 Black Week −15%":"Wszystkie produkty";
  let bc=`<a href="#/">Start</a><span>›</span><a href="#/produkty">Produkty</a>`;
  if(R.kind==="all")bc+=`<span>›</span><span>Wszystkie produkty</span>`;
  else if(R.kind==="cat"&&catLab){bc+=`<span>›</span>`+(R.sc?`<a href="#/kategoria/${R.cat}">${catLab.n}</a><span>›</span><span>${subLab||R.sc}</span>`:`<span>${catLab.n}</span>`)}
  else if(R.kind==="q")bc+=`<span>›</span><span>Szukaj</span>`;
  else if(R.kind==="eko")bc+=`<span>›</span><span>Eko-tryb</span>`;
+ else if(R.kind==="bw")bc+=`<span>›</span><span>Black Week</span>`;
  $("#lBc").innerHTML=bc;
  $("#lT").textContent=title;
  $("#lN").textContent=`${plN(L.length)}${R.kind==="cat"&&CDESC[R.cat]?" · "+CDESC[R.cat]:""}`;
@@ -1293,7 +1336,7 @@ function renderList(anim){
   }else{subsEl.innerHTML="";subsEl.hidden=true}
  }
  const filt=$("#lFilt");
- if(filt){filt.innerHTML=`<label class="pr">Cena od <input id="lMin" type="number" inputmode="decimal" min="0" step="1" placeholder="0" value="${lmin}"></label><label class="pr">do <input id="lMax" type="number" inputmode="decimal" min="0" step="1" placeholder="max" value="${lmax}"></label><label class="chk"><input type="checkbox" id="lSub" ${lsubonly?"checked":""}> Tylko do subskrypcji</label><label class="chk"><input type="checkbox" id="lEko" ${leko||R.kind==="eko"?"checked":""} ${R.kind==="eko"?"disabled":""}> 🌱 Eko i duże opakowania</label>${(lbrand||lmin||lmax||lsubonly||(leko&&R.kind!=="eko"))?`<button type="button" class="chip" data-clrfilt>Wyczyść filtry</button>`:""}`}
+ if(filt){filt.innerHTML=`<label class="pr">Cena od <input id="lMin" type="number" inputmode="decimal" min="0" step="1" placeholder="0" value="${lmin}"></label><label class="pr">do <input id="lMax" type="number" inputmode="decimal" min="0" step="1" placeholder="max" value="${lmax}"></label><label class="chk"><input type="checkbox" id="lSub" ${lsubonly?"checked":""}> Tylko do subskrypcji</label>${BWon?`<label class="chk"><input type="checkbox" id="lBw" ${lbw||R.kind==="bw"?"checked":""} ${R.kind==="bw"?"disabled":""}> 🖤 Black Week −15%</label>`:""}<label class="chk"><input type="checkbox" id="lEko" ${leko||R.kind==="eko"?"checked":""} ${R.kind==="eko"?"disabled":""}> 🌱 Eko i duże opakowania</label>${(lbrand||lmin||lmax||lsubonly||(leko&&R.kind!=="eko")||(lbw&&R.kind!=="bw"))?`<button type="button" class="chip" data-clrfilt>Wyczyść filtry</button>`:""}`}
  const MAXB=18;let brandHTML="";
  if(brands.length>1){
   const freq={};base.forEach(p=>{const b=brand(p);freq[b]=(freq[b]||0)+1});
@@ -1325,8 +1368,8 @@ function renderList(anim){
 $on("#lBrands").addEventListener("click",e=>{const b=e.target.closest("[data-br]");if(!b)return;lbrand=b.dataset.br;renderList(true)});
 $on("#lBrands").addEventListener("change",e=>{if(e.target.id!=="lBrandMore")return;lbrand=e.target.value;renderList(true)});
 $on("#lSort").addEventListener("change",e=>{lsort=e.target.value;renderList(true)});
-$on("#lFilt").addEventListener("change",e=>{if(e.target.id==="lMin")lmin=e.target.value.trim();else if(e.target.id==="lMax")lmax=e.target.value.trim();else if(e.target.id==="lSub")lsubonly=e.target.checked;else if(e.target.id==="lEko")leko=e.target.checked;else return;renderList(true)});
-$on("#lFilt").addEventListener("click",e=>{if(!e.target.closest("[data-clrfilt]"))return;lbrand="";lmin="";lmax="";lsubonly=false;if(R.kind!=="eko")leko=false;renderList(true)});
+$on("#lFilt").addEventListener("change",e=>{if(e.target.id==="lMin")lmin=e.target.value.trim();else if(e.target.id==="lMax")lmax=e.target.value.trim();else if(e.target.id==="lSub")lsubonly=e.target.checked;else if(e.target.id==="lEko")leko=e.target.checked;else if(e.target.id==="lBw")lbw=e.target.checked;else return;renderList(true)});
+$on("#lFilt").addEventListener("click",e=>{if(!e.target.closest("[data-clrfilt]"))return;lbrand="";lmin="";lmax="";lsubonly=false;if(R.kind!=="eko")leko=false;if(R.kind!=="bw")lbw=false;renderList(true)});
 $on("#lPager").addEventListener("click",e=>{const b=e.target.closest("[data-page]");if(!b||b.disabled)return;lpage=+b.dataset.page;renderList(false);const t=$("#lT");if(t)t.scrollIntoView({block:"start",behavior:(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches)?"auto":"smooth"})});
 function renderProd(){
  const p=byId(R.id),b=$("#pBody");
@@ -1334,15 +1377,15 @@ function renderProd(){
  const c=CATN[p.c],ls=line(p.id,"sub"),lo=line(p.id,"once");
  b.innerHTML=`<nav class="bc"><a href="#/">Start</a><span>›</span><a href="#/kategoria/${p.c}">${c.n}</a><span>›</span><span>${SHORT(p)}</span></nav>
  <div class="pd">
-  <div class="big">${pic(p)}<span class="disc">−15% w subskrypcji</span>${badgeHTML(p)}</div>
+  <div class="big">${pic(p)}${p.bw?"":`<span class="disc">−15% w subskrypcji</span>`}${badgeHTML(p)}</div>
   <div>
    <div class="brd">${brand(p)}</div><h1>${p.n}</h1><div class="pk">${p.m}${p.ean?` · EAN ${p.ean}`:""}</div>${prodTop(p)}
    <div class="prow"><span style="font-weight:700">Ilość</span><div class="qst"><button data-pq="-1" aria-label="Mniej">−</button><span id="pqv">${pq}</span><button data-pq="1" aria-label="Więcej">+</button></div></div>
    <div class="pbox s"><h5>🔁 Subskrypcja – co miesiąc taniej</h5>
-    <div class="pr"><b>${zl(subP(p))}</b><s>${zl(p.old||p.p)}</s><span class="tag2">−15%</span></div><div class="ut">${upTxt(p,subP(p))}</div>
+    <div class="pr"><b>${zl(subP(p))}</b><s>${zl(p.old||p.p)}</s>${p.bw?`<span class="tag2 bw">Black Week −${bwPct(p)}%</span>`:`<span class="tag2">−15%</span>`}</div><div class="ut">${upTxt(p,subP(p))}</div>${omniHTML(p)}${p.bw?`<p class="bwnotep">Rabat subskrypcji (−15%) nie łączy się z promocją Black Week – naliczamy korzystniejszą z cen.</p>`:""}
     <div class="prow"><label for="pf" style="font-size:14px;font-weight:700">Rytm dostaw</label><select id="pf">${Object.entries(FREQ).map(([k,v])=>`<option value="${k}" ${pf===k?"selected":""}>${v[0]}</option>`).join("")}</select></div>
     <div class="pbtn"><button class="btn btn-p" id="pSub">🔁 Subskrybuj co miesiąc · ${zl(subP(p)*pq)}</button></div></div>
-   <div class="pbox"><h5>🛒 Jednorazowo</h5><div class="pr"><b style="font-size:22px">${zl(p.p)}</b>${p.old?`<s>${zl(p.old)}</s><span class="tag2" style="background:#ef4444">Promocja</span>`:""}</div><div class="ut">${upTxt(p,p.p)}</div>
+   <div class="pbox"><h5>🛒 Jednorazowo</h5><div class="pr"><b style="font-size:22px">${zl(p.p)}</b>${p.bw?`<s>${zl(p.old)}</s><span class="tag2 bw">Black Week −${bwPct(p)}%</span>`:p.old?`<s>${zl(p.old)}</s><span class="tag2" style="background:#ef4444">Promocja</span>`:""}</div><div class="ut">${upTxt(p,p.p)}</div>${omniHTML(p)}
     <div class="pbtn"><button class="btn btn-o" id="pOnce">Dodaj do koszyka · ${zl(p.p*pq)}</button></div></div>
    ${ls||lo?`<div class="row mo" style="margin-top:10px"><span>✓ W koszyku: ${ls?`${ls.qty} szt. co miesiąc`:""}${ls&&lo?", ":""}${lo?`${lo.qty} szt. jednorazowo`:""}</span><button class="lnk" id="pGo">Zamów →</button></div>`:""}
    <div class="pperks"><span>📦 Paczkomat w 1–2 dni · darmowa dostawa od ${FREE} zł</span><span>🔔 Przed każdą dostawą pytamy: jak zwykle, więcej, mniej czy pominąć</span><span>✋ Bez zobowiązań – wstrzymasz albo anulujesz w 1 klik</span></div>
@@ -1361,6 +1404,7 @@ $on("#pBody").addEventListener("change",e=>{if(e.target.id==="pf")pf=e.target.va
 function renderHome(anim){const t=$("#ctiles");if(!t)return;
  t.innerHTML=Object.entries(CATN).map(([k,c])=>{const L=P.filter(p=>p.c===k),f=[...L].sort((a,b)=>pop(b)-pop(a))[0];return `<a class="ctile" href="#/kategoria/${k}"><span class="ti">${f?pic(f):c.e}</span><span><b>${c.e} ${c.n}</b><small>${plN(L.length)}</small></span></a>`}).join("");
  $("#bestRow").innerHTML=BEST.map((p,i)=>cardHTML(p,i,anim)).join("");
+ bwRenderHome(anim);
  const rc=store.get("recent",[]).map(byId).filter(Boolean);$("#recentSec").hidden=!rc.length;$("#recentRow").innerHTML=rc.map((p,i)=>cardHTML(p,i)).join("")}
 function renderGrid(anim){renderHome(anim);if(R.pg==="list")renderList(anim);else if(R.pg==="prod")renderProd();else if(R.pg==="page")renderPage(true)}
 function route(){if(!catalogReady){const cl=$("#catLoad");if(cl)cl.hidden=false;return}
@@ -1369,6 +1413,7 @@ function route(){if(!catalogReady){const cl=$("#catLoad");if(cl)cl.hidden=false;
  if(h.startsWith("#/kategoria/")){const parts=h.slice(12).split("/").filter(Boolean);R={pg:"list",kind:"cat",cat:parts[0]||"",sc:parts[1]||""}}
  else if(h==="#/produkty")R={pg:"list",kind:"all"};
  else if(h==="#/eko"){R={pg:"list",kind:"eko"};leko=true}
+ else if(h==="#/black-week"){if(BWon){R={pg:"list",kind:"bw"};lbw=true}else R={pg:"home",anchor:""}}
  else if(h.startsWith("#/szukaj"))R={pg:"list",kind:"q",q:new URLSearchParams(h.split("?")[1]||"").get("q")||""};
  else if(h.startsWith("#/kalkulator")||h.startsWith("#/listy")||h.startsWith("#/poradniki")||h.startsWith("#/polecenia"))R={pg:"page",path:h.slice(2).split("?")[0]};
  else if(h.startsWith("#/produkt/")){R={pg:"prod",id:+h.slice(10)};pq=1;const l=line(R.id,"sub");pf=(l&&l.f)||"1m"}
@@ -1377,7 +1422,7 @@ function route(){if(!catalogReady){const cl=$("#catLoad");if(cl)cl.hidden=false;
  else R={pg:"page",path:h.slice(2)};
  if(R.pg==="list"){
   const catChanged=!(prevKind===R.kind&&prevCat===R.cat);
-  if(catChanged){lbrand="";lmin="";lmax="";lsubonly=false}
+  if(catChanged){lbrand="";lmin="";lmax="";lsubonly=false;if(R.kind!=="bw")lbw=false}
   if(R.kind!=="q"&&(catChanged||prevSc!==R.sc))lsort="pop";
  }
  if(R.pg==="owner")ensureAllFull().then(()=>renderHurt());
@@ -1404,7 +1449,7 @@ let sT;function doSearch(v,now){v=v.trim();clearTimeout(sT);sT=setTimeout(()=>{i
 /* menu drawer */
 function buildMenu(){if(!$("#mList"))return;$("#mList").innerHTML=`<a href="#/produkty"><span class="ce">🛍️</span>Wszystkie produkty<small>${P.length}</small></a><div class="mt">Kategorie</div>`+
  Object.entries(CATN).map(([k,c])=>`<a href="#/kategoria/${k}"><span class="ce">${c.e}</span>${c.n}<small>${P.filter(p=>p.c===k).length}</small></a>`).join("")+
- `<div class="mt">Domownik</div><a href="#/listy"><span class="ce">📋</span>Gotowe listy</a><a href="#/kalkulator"><span class="ce">🧮</span>Kalkulator zużycia</a><a href="#/eko"><span class="ce">🌱</span>Eko i duże opakowania</a><a href="#/polecenia"><span class="ce">🎁</span>Program poleceń</a><a href="#/poradniki" data-porad-nav ${POR.length?"":"hidden"}><span class="ce">📖</span>Poradniki</a><a href="#zestawy"><span class="ce">⭐</span>Gotowe zestawy</a><a href="#" data-mq><span class="ce">⚡</span>Zestaw w 30 sekund</a><a href="#jak"><span class="ce">💡</span>Jak to działa</a><a href="#" data-macc><span class="ce">👤</span>Moje konto</a><a href="#/ulubione"><span class="ce">♥</span>Ulubione</a><a href="#/porownaj"><span class="ce">⚖️</span>Porównywarka cen</a><a href="#aplikacja"><span class="ce">📲</span>Aplikacja</a><div class="mt">Pomoc</div><a href="#/strona/dostawa"><span class="ce">🚚</span>Dostawa i płatności</a><a href="#/strona/zwroty"><span class="ce">↩️</span>Zwroty i reklamacje</a><a href="#/strona/faq"><span class="ce">❓</span>FAQ</a><a href="#/strona/kontakt"><span class="ce">✉️</span>Kontakt</a><a href="#/wlasciciele"><span class="ce">🔒</span>Dla właścicieli</a>`}
+ `<div class="mt">Domownik</div>${BWon?`<a href="#/black-week"><span class="ce">🖤</span>Black Week −15%</a>`:""}<a href="#/listy"><span class="ce">📋</span>Gotowe listy</a><a href="#/kalkulator"><span class="ce">🧮</span>Kalkulator zużycia</a><a href="#/eko"><span class="ce">🌱</span>Eko i duże opakowania</a><a href="#/polecenia"><span class="ce">🎁</span>Program poleceń</a><a href="#/poradniki" data-porad-nav ${POR.length?"":"hidden"}><span class="ce">📖</span>Poradniki</a><a href="#zestawy"><span class="ce">⭐</span>Gotowe zestawy</a><a href="#" data-mq><span class="ce">⚡</span>Zestaw w 30 sekund</a><a href="#jak"><span class="ce">💡</span>Jak to działa</a><a href="#" data-macc><span class="ce">👤</span>Moje konto</a><a href="#/ulubione"><span class="ce">♥</span>Ulubione</a><a href="#/porownaj"><span class="ce">⚖️</span>Porównywarka cen</a><a href="#aplikacja"><span class="ce">📲</span>Aplikacja</a><div class="mt">Pomoc</div><a href="#/strona/dostawa"><span class="ce">🚚</span>Dostawa i płatności</a><a href="#/strona/zwroty"><span class="ce">↩️</span>Zwroty i reklamacje</a><a href="#/strona/faq"><span class="ce">❓</span>FAQ</a><a href="#/strona/kontakt"><span class="ce">✉️</span>Kontakt</a><a href="#/wlasciciele"><span class="ce">🔒</span>Dla właścicieli</a>`}
 $on("#menuBtn").addEventListener("click",()=>openP($("#menu")));
 $on("#mList").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;
  if(a.hasAttribute("data-mq")){e.preventDefault();openQuiz();return}
@@ -1439,7 +1484,7 @@ function renderCart(){
  const sec=(mode,title)=>{const ls=cart.filter(l=>l.mode===mode);if(!ls.length)return"";
   return `<div class="grp-t">${title}</div>`+ls.map(l=>{const p=byId(l.id),pr=mode==="sub"?subP(p):p.p;
    return `<div class="ci" data-id="${l.id}" data-m="${mode}"><div class="th${hasPic(p)?" ph":""}" style="background:${hasPic(p)?"#fff":p.col}">${pic(p)}</div>
-    <div class="nm"><b>${p.n}</b><span class="mode${mode==="sub"?" s":""}">${mode==="sub"?"🔁 co miesiąc -15%":"jednorazowo"}</span></div>
+    <div class="nm"><b>${p.n}</b><span class="mode${mode==="sub"?" s":""}">${mode==="sub"?(p.bw?"🔁 co miesiąc":"🔁 co miesiąc -15%"):"jednorazowo"}</span>${p.bw?`<i class="bwt">Black Week −${bwPct(p)}%</i>`:""}</div>
     <div class="rt"><b>${zl(pr*l.qty)}</b><div class="qs"><button data-q="-1">−</button><span>${l.qty}</span><button data-q="1">+</button></div></div></div>`}).join("")};
  const goods=T.goods,left=Math.max(0,FREE-goods),pct=Math.min(100,goods/FREE*100);
  body.innerHTML=sec("sub","Subskrypcja co miesiąc")+sec("once","Jednorazowo")+
@@ -1775,7 +1820,7 @@ $("#appHint").textContent=PLAT==="desktop"?"💻 Jesteś na komputerze – otwó
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const NEW_IDS=[44,45,46,47,50,51];
 function stock(p){return ((p.id*37)%53)+3}
-function badgeHTML(p){const b=[];if(p.old)b.push(["promo",`Promocja −${Math.round((1-p.p/p.old)*100)}%`]);if(typeof isEco==="function"&&isEco(p))b.push(["eco","Eko"]);else if(typeof isLarge==="function"&&isLarge(p))b.push(["bigpack","Duże opakowanie"]);if(BEST.includes(p))b.push(["best","Bestseller"]);if(NEW_IDS.includes(p.id))b.push(["new","Nowość"]);if(stock(p)<=8)b.push(["low","Ostatnie sztuki"]);
+function badgeHTML(p){const b=[];if(p.bw)b.push(["bw",`Black Week −${bwPct(p)}%`]);else if(p.old)b.push(["promo",`Promocja −${Math.round((1-p.p/p.old)*100)}%`]);if(typeof isEco==="function"&&isEco(p))b.push(["eco","Eko"]);else if(typeof isLarge==="function"&&isLarge(p))b.push(["bigpack","Duże opakowanie"]);if(BEST.includes(p))b.push(["best","Bestseller"]);if(NEW_IDS.includes(p.id))b.push(["new","Nowość"]);if(stock(p)<=8)b.push(["low","Ostatnie sztuki"]);
  return b.length?`<span class="bdg">${b.slice(0,3).map(([k,t])=>`<i class="${k}">${t}</i>`).join("")}</span>`:""}
 /* ulubione */
 let favs=store.get("fav",[]);
@@ -2059,12 +2104,43 @@ function migrateIds(){const r=id=>{id=+id;return REMAP[id]||id},ok=id=>PbyId.has
  try{const v=store.get("last",null);if(Array.isArray(v)){const n=fixL(v);if(!same(n,v))store.set("last",n)}}catch(e){}
  try{const v=store.get("orders",null);if(Array.isArray(v)){const n=JSON.parse(JSON.stringify(v));n.forEach(o=>{if(o&&o.items)o.items=fixT(o.items)});if(!same(n,v)){store.set("orders",n);orders=n}}}catch(e){}
 }
+
+/* ===== Black Week (v19): dane z promo.json; start i koniec sterowane datą, po końcu ceny wracają same ===== */
+let BW=null,BWon=false,bwTimer=null;
+const bwPct=p=>p&&p.bw&&p.old?Math.floor((1-p.p/p.old)*100+1e-6):0;
+const omniHTML=p=>p&&p.bw&&p.old?`<div class="omni">Najniższa cena z 30 dni przed obniżką: ${zl(p.old)}</div>`:"";
+function bwFmt(ms){if(ms<0)ms=0;const t=Math.floor(ms/1000),d=Math.floor(t/86400),h=Math.floor(t%86400/3600),m=Math.floor(t%3600/60),s=t%60,z=n=>String(n).padStart(2,"0");return (d>0?d+" d ":"")+z(h)+":"+z(m)+":"+z(s)}
+function bwParse(j){if(!j||!j.items||!j.start||!j.end)return null;const s=Date.parse(j.start),e=Date.parse(j.end);if(!(s<e))return null;return{id:j.id,s,e,items:j.items,order:j.order||Object.keys(j.items).map(Number)}}
+function bwApply(){
+ if(!BW||BWon||!(Date.now()>=BW.s&&Date.now()<BW.e))return false;
+ let n=0;Object.entries(BW.items).forEach(([id,v])=>{const p=byId(id);if(!p||p.old!=null||p.bw)return;const q=v[0],r=v[1];if(Math.abs(p.p-r)>0.004||!(q<r))return;p.old=r;p.p=q;p.bw=1;n++});
+ BWon=n>0;return BWon}
+function bwRevert(){P.forEach(p=>{if(p.bw){p.p=p.old;delete p.old;delete p.bw}});BWon=false}
+function bwRenderHome(anim){
+ const sec=$("#bwHome"),bar=$("#bwBar");if(!sec||!bar)return;
+ sec.hidden=!BWon;bar.hidden=!BWon;if(!BWon)return;
+ const L=BW.order.map(byId).filter(p=>p&&p.bw);
+ $("#bwRow").innerHTML=L.slice(0,12).map((p,i)=>cardHTML(p,i,anim)).join("");
+ const n=P.filter(p=>p.bw).length;$("#bwAll").textContent=`Zobacz wszystkie (${n}) →`;
+ const d=new Date(BW.e);$("#bwEnd").textContent=`${d.getDate()} ${MONTHS[d.getMonth()]}, ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`;
+ bwTick(true)}
+function bwTick(quiet){
+ if(!BW)return;const now=Date.now();
+ if(!BWon&&now>=BW.s&&now<BW.e&&P.length&&bwApply()){buildMenu();if(typeof buildCatbar==="function")buildCatbar();changed();return}
+ if(BWon&&now>=BW.e){bwRevert();clearInterval(bwTimer);bwTimer=null;
+  const hide=$("#bwBar");if(hide)hide.hidden=true;const sec=$("#bwHome");if(sec)sec.hidden=true;
+  lbw=false;buildMenu();if(typeof buildCatbar==="function")buildCatbar();changed();
+  if(R.pg==="list"&&R.kind==="bw")go("#/");else route();return}
+ if(BWon){const t=bwFmt(BW.e-now),a=$("#bwCd"),b=$("#bwCd2");if(a)a.textContent=t;if(b)b.textContent="Koniec za "+t}
+}
+function bwStart(){if(!BW||bwTimer)return;if(Date.now()>=BW.e)return;bwTimer=setInterval(()=>bwTick(),1000)}
 function applyCatalog(list){
  P=Array.isArray(list)?list:[];
  PbyId=new Map(P.map(p=>[p.id,p]));
  migrateIds();
  P.forEach(p=>{if(p.sub==null)p.sub=1;p._q=searchText(p)});
  applyPromos();
+ bwApply();bwStart();
  refreshBest();
  catalogReady=true;
  const cl=$("#catLoad");if(cl)cl.hidden=true;
@@ -2085,7 +2161,8 @@ function loadCatalog(){
  const cl=$("#catLoad");if(cl)cl.hidden=false;
  const urls=["./catalog/search.json","./catalog.json"];
  const pull=(i)=>fetch(urls[i],{credentials:"same-origin"}).then(r=>{if(!r.ok)throw new Error("katalog "+r.status);return r.json()}).catch(err=>{if(i+1<urls.length)return pull(i+1);throw err});
- return pull(0).then(applyCatalog).catch(err=>{
+ const pj=fetch("./promo.json",{credentials:"same-origin",cache:"no-cache"}).then(r=>r.ok?r.json():null).then(bwParse).catch(()=>null);
+ return Promise.all([pull(0),pj]).then(([list,b])=>{BW=b;applyCatalog(list)}).catch(err=>{
   console.error(err);
   const cl2=$("#catLoad");
   if(cl2){cl2.hidden=false;cl2.textContent="Nie udało się wczytać asortymentu. Odśwież stronę."}
@@ -2399,7 +2476,7 @@ function buildCatbar(){
     return `<div class="catdrop"><a href="#/kategoria/${k}">${c.e} ${c.n.replace(/^[^ ]+ /,"")}</a>
      <div class="catmega">${subs.map(([sk,sn])=>`<a href="#/kategoria/${k}/${sk}"><span>${SUBICO[k+"/"+sk]||c.e} ${sn}</span><small>${P.filter(p=>p.c===k&&p.sc===sk).length}</small></a>`).join("")}
      <a href="#/kategoria/${k}"><span>Wszystko w kategorii</span><small>${n}</small></a></div></div>`}).join("")+
-    `<a href="#/listy" class="hl">📋 Listy</a><a href="#/kalkulator">🧮 Kalkulator</a><a href="#/eko">🌱 Eko</a><span data-porad-nav ${POR.length?"":"hidden"}><a href="#/poradniki">📖 Poradniki</a></span><a href="#zestawy" class="hl">⭐ Zestawy</a>`;
+    `${BWon?`<a href="#/black-week" class="hl">🖤 Black Week</a>`:""}<a href="#/listy" class="hl">📋 Listy</a><a href="#/kalkulator">🧮 Kalkulator</a><a href="#/eko">🌱 Eko</a><span data-porad-nav ${POR.length?"":"hidden"}><a href="#/poradniki">📖 Poradniki</a></span><a href="#zestawy" class="hl">⭐ Zestawy</a>`;
 }
 
 function popularRow(){
